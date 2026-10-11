@@ -7,23 +7,19 @@
 <title>Get a Quote | ONE Lawns & Landscaping</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 :root {
   --green: #286b3b;
   --dark-green: #174a29;
   --light-green: #edf4eb;
-  --background: #f7f9f5;
+  --background: #f5f6f4;
   --border: #d6dfd3;
   --text: #263027;
   --muted: #606a60;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -40,9 +36,7 @@ header {
   border-bottom: 1px solid var(--border);
 }
 
-header a {
-  display: inline-block;
-}
+header a { display: inline-block; }
 
 .logo {
   display: block;
@@ -51,14 +45,14 @@ header a {
   max-width: 70vw !important;
   max-height: 85px !important;
   object-fit: contain !important;
-  margin: 0 auto;
+  margin: auto;
 }
 
 main {
-  width: 100%;
   max-width: 1100px;
-  margin: 0 auto;
-  padding: 35px 24px 45px;
+  width: calc(100% - 32px);
+  margin: auto;
+  padding: 32px 0 45px;
 }
 
 h1, h2, h3 {
@@ -68,25 +62,22 @@ h1, h2, h3 {
 
 h1 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 4vw, 2.6rem);
   margin: 0 0 12px;
 }
 
-h2 {
-  font-size: 1.7rem;
-  margin-top: 0;
-}
+h2 { font-size: 1.65rem; }
 
 .intro {
-  max-width: 750px;
-  margin: 0 auto 35px;
   text-align: center;
+  max-width: 750px;
+  margin: 0 auto 32px;
   color: var(--muted);
 }
 
 .section-title {
   text-align: center;
-  margin: 40px 0 22px;
+  margin: 38px 0 20px;
 }
 
 .plans {
@@ -96,18 +87,18 @@ h2 {
 }
 
 .plan-card {
-  width: 100%;
-  min-width: 0;
   display: flex;
   flex-direction: column;
-  text-align: left;
+  width: 100%;
+  min-width: 0;
   padding: 24px;
   background: white;
   color: var(--text);
   border: 1px solid var(--border);
   border-top: 6px solid var(--green);
-  border-radius: 10px;
-  box-shadow: 0 3px 12px rgba(0,0,0,.05);
+  border-radius: 11px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.04);
+  text-align: left;
   font: inherit;
   cursor: pointer;
   transition: transform .15s, box-shadow .15s;
@@ -115,7 +106,7 @@ h2 {
 
 .plan-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 7px 18px rgba(0,0,0,.1);
+  box-shadow: 0 7px 18px rgba(0,0,0,.09);
 }
 
 .plan-card h3 {
@@ -129,39 +120,46 @@ h2 {
 }
 
 .plan-card ul {
-  padding-left: 22px;
-  margin: 8px 0 22px;
+  padding-left: 21px;
+  margin: 8px 0 20px;
 }
 
 .plan-link {
   display: block;
-  text-align: center;
   margin-top: auto;
   padding: 10px;
   border-radius: 6px;
   background: var(--light-green);
   color: var(--dark-green);
+  text-align: center;
   font-weight: bold;
 }
 
+.treatment-link {
+  display: inline-block;
+  color: var(--green);
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 0 0 14px;
+}
+
 .custom-card {
+  display: block;
   width: 100%;
   max-width: 650px;
-  display: block;
   margin: 22px auto 0;
   padding: 25px;
   background: white;
-  color: var(--text);
   border: 2px solid var(--green);
-  border-radius: 10px;
-  font: inherit;
+  border-radius: 11px;
+  color: var(--text);
   text-align: center;
+  font: inherit;
   cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0,0,0,.04);
 }
 
-.custom-card:hover {
-  background: var(--light-green);
-}
+.custom-card:hover { background: var(--light-green); }
 
 .custom-card h3 {
   margin: 0 0 8px;
@@ -170,50 +168,52 @@ h2 {
 
 .custom-card p {
   color: var(--muted);
+  margin: 8px 0 18px;
 }
 
 .panel {
   background: white;
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 28px;
+  border-radius: 11px;
+  padding: clamp(20px, 3vw, 32px);
   margin-top: 35px;
   box-shadow: 0 3px 12px rgba(0,0,0,.04);
   scroll-margin-top: 20px;
 }
 
-.hidden {
-  display: none !important;
+.panel h2 { margin-top: 0; }
+
+.panel-intro {
+  color: var(--muted);
+  margin-top: -5px;
+  margin-bottom: 24px;
 }
+
+.hidden { display: none !important; }
 
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 17px;
+  gap: 18px;
 }
 
 .field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 7px;
   min-width: 0;
 }
 
-.full {
-  grid-column: 1 / -1;
-}
+.full { grid-column: 1 / -1; }
 
-label, .field-label {
-  font-weight: bold;
-}
+label, .field-label { font-weight: bold; }
 
 input:not([type="checkbox"]):not([type="radio"]),
-select,
-textarea {
+select, textarea {
   width: 100%;
   min-width: 0;
-  padding: 11px 12px;
-  border: 1px solid #bdc9b9;
+  padding: 13px 14px;
+  border: 1px solid #c5c5c5;
   border-radius: 6px;
   background: white;
   color: var(--text);
@@ -221,8 +221,13 @@ textarea {
 }
 
 textarea {
-  min-height: 110px;
+  min-height: 120px;
   resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 1px;
 }
 
 .choice-grid {
@@ -236,9 +241,9 @@ textarea {
   align-items: flex-start;
   gap: 10px;
   padding: 12px;
-  background: white;
   border: 1px solid var(--border);
-  border-radius: 7px;
+  border-radius: 6px;
+  background: white;
   cursor: pointer;
   font-weight: normal;
 }
@@ -254,103 +259,74 @@ textarea {
   background: var(--light-green);
 }
 
-button, .button {
-  display: inline-flex;
+.primary-button {
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 18px;
-  border-radius: 7px;
-  border: none;
+  width: 100%;
+  padding: 15px 18px;
+  border: 0;
+  border-radius: 6px;
   background: var(--green);
   color: white;
   font: inherit;
   font-weight: bold;
-  text-decoration: none;
   cursor: pointer;
 }
 
-button:hover, .button:hover {
-  background: var(--dark-green);
-}
+.primary-button:hover { background: var(--dark-green); }
 
-.submit-button {
-  width: 100%;
-}
-
-.button.secondary {
-  background: white;
-  color: var(--dark-green);
-  border: 1px solid var(--green);
+.message-notes {
+  border-top: 1px solid #ddd;
+  margin-top: 22px;
+  padding-top: 12px;
 }
 
 .note {
   max-width: 850px;
   margin: 12px auto 0;
   color: var(--muted);
-  font-size: .9rem;
+  font-size: .88rem;
   text-align: center;
-}
-
-.message-notes {
-  border-top: 1px solid var(--border);
-  margin-top: 22px;
-  padding-top: 12px;
 }
 
 .button-row {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
   margin-top: 28px;
 }
 
+.back-button {
+  display: inline-block;
+  padding: 12px 22px;
+  background: var(--green);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-button:hover { background: var(--dark-green); }
+
 footer {
-  padding: 22px 15px;
+  padding: 24px 15px;
   background: var(--dark-green);
   color: white;
   text-align: center;
 }
 
-footer p {
-  margin: 4px;
-}
-
-footer a {
-  color: white;
-}
+footer p { margin: 5px; }
+footer a { color: white; }
 
 @media (max-width: 800px) {
-  .plans {
-    grid-template-columns: 1fr;
-  }
-
-  .plan-card {
-    padding: 22px;
-  }
+  .plans { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 550px) {
-  main {
-    padding: 25px 12px 35px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  .form-grid,
-  .choice-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .panel {
-    padding: 17px;
-  }
-
-  .section-title {
-    margin-top: 32px;
-  }
+  main { width: calc(100% - 22px); padding-top: 25px; }
+  .form-grid, .choice-grid { grid-template-columns: 1fr; }
+  .panel { padding: 18px; }
+  .section-title { margin-top: 32px; }
 }
 </style>
 </head>
@@ -358,32 +334,25 @@ footer a {
 <body>
 
 <header>
-  <a href="index.html">
-    <img
-      class="logo"
-      src="logo.png"
-      alt="ONE Lawns & Landscaping"
-      style="width:170px!important;height:85px!important;max-height:85px!important;object-fit:contain!important"
-    >
+  <a href="index.html" aria-label="ONE Lawns & Landscaping home">
+    <img class="logo" src="logo.png" alt="ONE Lawns & Landscaping">
   </a>
 </header>
 
 <main>
-
   <h1>Get a Quote</h1>
 
   <p class="intro">
-    Choose a recurring lawn care plan or request a custom quote for a specific project.
-    Select an option below to get started.
+    Choose a lawn care plan for recurring service or request a custom quote
+    for a specific project. Select an option below to get started.
   </p>
 
   <h2 class="section-title">Recurring Lawn Care Plans</h2>
 
   <div class="plans">
-
     <button type="button" class="plan-card" data-plan="Essential Lawn Care">
       <h3>Essential Lawn Care</h3>
-      <p>Core lawn maintenance to keep your yard neat and tidy.</p>
+      <p>Our core lawn maintenance services to keep your yard looking neat.</p>
       <ul>
         <li>Mowing</li>
         <li>Weedeating</li>
@@ -395,7 +364,7 @@ footer a {
 
     <button type="button" class="plan-card" data-plan="Enhanced Lawn Care">
       <h3>Enhanced Lawn Care</h3>
-      <p>Essential lawn care with added shrub and hedge maintenance.</p>
+      <p>Essential lawn care with additional shrub and hedge maintenance.</p>
       <ul>
         <li>Everything in Essential</li>
         <li>Shrub &amp; Hedge Trimming</li>
@@ -413,8 +382,13 @@ footer a {
       </ul>
       <span class="plan-link">Select Complete Lawn Care →</span>
     </button>
-
   </div>
+
+  <p style="text-align:center;margin:14px 0 0">
+    <a class="treatment-link" href="complete-lawn-care.html">
+      Learn About Fertilization &amp; Spot Spraying
+    </a>
+  </p>
 
   <h2 class="section-title">Need a Specific Job Done?</h2>
 
@@ -422,37 +396,37 @@ footer a {
     <h3>Custom Quote</h3>
     <p>
       Need a flower bed, mulch, decorative rock, leveling, sod, trimming,
-      or another service? Choose your services and send us a quote request.
+      or another service? Select the work you need and send us your request.
     </p>
     <span class="plan-link">Request a Custom Quote →</span>
   </button>
 
-  <!-- RECURRING PLAN FORM -->
-
+  <!-- RECURRING PLAN REQUEST -->
   <section class="panel hidden" id="planRequest">
     <h2 id="planHeading">Lawn Care Plan Request</h2>
-    <p>Complete the information below to prepare your text request.</p>
+    <p class="panel-intro">
+      Fill in your information to prepare a text request for your selected plan.
+    </p>
 
     <form id="recurringForm" class="form-grid">
-
       <div class="field full">
         <label for="planName">Selected Plan *</label>
         <input id="planName" readonly required>
       </div>
 
       <div class="field">
-        <label for="customerName">Full Name *</label>
-        <input id="customerName" autocomplete="name" required>
+        <label for="customerName">Your Name *</label>
+        <input id="customerName" placeholder="First and last name" autocomplete="name" required>
       </div>
 
       <div class="field">
         <label for="propertyAddress">Property Address *</label>
-        <input id="propertyAddress" autocomplete="street-address" required>
+        <input id="propertyAddress" placeholder="Street address, city, and ZIP code" autocomplete="street-address" required>
       </div>
 
       <div class="field full">
-        <label for="otherContact">Other Contact Information (Optional)</label>
-        <input id="otherContact" placeholder="Email or other contact information">
+        <label for="otherContact">Other Contact Info (Optional)</label>
+        <input id="otherContact" placeholder="Email or another way to reach you">
       </div>
 
       <div class="field full">
@@ -472,12 +446,10 @@ footer a {
 
       <div class="field full">
         <span class="field-label">Payment Schedule *</span>
-
         <label class="choice">
           <input type="radio" name="payment" value="On the date each service is provided" required>
           On the date each service is provided
         </label>
-
         <label class="choice">
           <input type="radio" name="payment" value="At the start of every month" required>
           At the start of every month
@@ -485,14 +457,13 @@ footer a {
       </div>
 
       <div class="field full">
-        <label for="planDetails">Additional Information (Optional)</label>
-        <textarea id="planDetails" placeholder="Anything else we should know?"></textarea>
+        <label for="planDetails">Additional Details (Optional)</label>
+        <textarea id="planDetails" placeholder="Tell us anything else we should know."></textarea>
       </div>
 
       <div class="field full">
-        <button class="submit-button" type="submit">Text My Plan Request</button>
+        <button class="primary-button" type="submit">Text My Plan Request</button>
       </div>
-
     </form>
 
     <div class="message-notes">
@@ -501,22 +472,21 @@ footer a {
     </div>
   </section>
 
-  <!-- CUSTOM QUOTE FORM -->
-
+  <!-- CUSTOM QUOTE REQUEST -->
   <section class="panel hidden" id="customQuote">
     <h2>Custom Quote Request</h2>
-    <p>Choose a category and select all the services you need.</p>
+    <p class="panel-intro">
+      Choose a category, then select all the services you need.
+    </p>
 
     <form id="customForm" class="form-grid">
-
       <div class="field full">
-        <span class="field-label">What type of service do you need? *</span>
+        <span class="field-label">What Service Do You Need? *</span>
         <div class="choice-grid">
           <label class="choice">
             <input type="radio" name="category" value="Lawn Care" checked>
             Lawn Care
           </label>
-
           <label class="choice">
             <input type="radio" name="category" value="Landscaping">
             Landscaping
@@ -530,29 +500,28 @@ footer a {
       </div>
 
       <div class="field">
-        <label for="customName">Full Name *</label>
-        <input id="customName" autocomplete="name" required>
+        <label for="customName">Your Name *</label>
+        <input id="customName" placeholder="First and last name" autocomplete="name" required>
       </div>
 
       <div class="field">
-        <label for="customAddress">Property Address *</label>
-        <input id="customAddress" autocomplete="street-address" required>
+        <label for="customContact">Other Contact Info (Optional)</label>
+        <input id="customContact" placeholder="Email or another way to reach you">
       </div>
 
       <div class="field full">
-        <label for="customContact">Other Contact Information (Optional)</label>
-        <input id="customContact" placeholder="Email or other contact information">
+        <label for="customAddress">Property Address *</label>
+        <input id="customAddress" placeholder="Street address, city, and ZIP code" autocomplete="street-address" required>
       </div>
 
       <div class="field full">
         <label for="customDetails">Additional Details (Optional)</label>
-        <textarea id="customDetails" placeholder="Tell us anything else about the job..."></textarea>
+        <textarea id="customDetails" placeholder="Tell us about the project or anything else we should know."></textarea>
       </div>
 
       <div class="field full">
-        <button class="submit-button" type="submit">Request a Custom Quote</button>
+        <button class="primary-button" type="submit">Text My Request</button>
       </div>
-
     </form>
 
     <div class="message-notes">
@@ -562,10 +531,8 @@ footer a {
   </section>
 
   <div class="button-row">
-    <a class="button secondary" href="index.html">Home</a>
-    <a class="button secondary" href="services.html">View All Services</a>
+    <a class="back-button" href="index.html">← Back to Home</a>
   </div>
-
 </main>
 
 <footer>
@@ -713,11 +680,13 @@ document.getElementById('recurringForm').addEventListener('submit', event => {
     }
   }
 
+  const plan = planName.value;
+
   const body = [
     'ONE Lawns & Landscaping - Lawn Care Plan Request',
     '',
-    'Selected Plan: ' + planName.value,
-    'Included Services: ' + planServices[planName.value].join(', '),
+    'Selected Plan: ' + plan,
+    'Included Services: ' + planServices[plan].join(', '),
     'Name: ' + document.getElementById('customerName').value.trim(),
     'Property Address: ' + document.getElementById('propertyAddress').value.trim(),
     'Other Contact Information: ' +
@@ -727,7 +696,7 @@ document.getElementById('recurringForm').addEventListener('submit', event => {
         ? intervalInput.value + ' days'
         : frequency.value),
     'Payment Schedule: ' + payment.value,
-    'Additional Information: ' +
+    'Additional Details: ' +
       (document.getElementById('planDetails').value.trim() || 'None')
   ].join('\n');
 
