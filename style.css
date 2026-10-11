@@ -32,7 +32,7 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Centered logo */
+/* HEADER AND CENTERED LOGO */
 
 .site-header {
     display: flex;
@@ -40,7 +40,7 @@ a {
     justify-content: center;
     min-height: 130px;
     padding: 12px 20px;
-    background: #ffffff;
+    background: var(--one-white);
 }
 
 .header-logo-link {
@@ -55,7 +55,7 @@ a {
     height: auto;
 }
 
-/* Hero image with text over it */
+/* HERO IMAGE WITH TEXT OVERLAID */
 
 .hero {
     position: relative;
@@ -103,14 +103,14 @@ a {
     width: 100%;
     height: 100%;
     padding: 25px;
-    color: #ffffff;
+    color: var(--one-white);
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.85);
 }
 
 .hero h1 {
     max-width: 1100px;
     margin-bottom: 16px;
-    color: #ffffff;
+    color: var(--one-white);
     font-size: clamp(27px, 4vw, 48px);
     line-height: 1.25;
     font-style: italic;
@@ -128,7 +128,7 @@ a {
     padding: 14px 28px;
     border-radius: 8px;
     background: var(--one-green);
-    color: #ffffff;
+    color: var(--one-white);
     font-size: clamp(24px, 2.7vw, 32px);
     font-weight: bold;
     text-decoration: none;
@@ -141,15 +141,15 @@ a {
 }
 
 .service-area {
-    color: #ffffff;
+    color: var(--one-white);
     font-size: 18px;
 }
 
-/* Five large title-only cards */
+/* FIVE HOMEPAGE CARDS */
 
 .navigation-section {
     padding: 40px 20px 50px;
-    background: #ffffff;
+    background: var(--one-white);
 }
 
 .navigation-cards {
@@ -164,7 +164,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 150px;
+    min-height: 170px;
     padding: 25px;
     border: 1px solid var(--one-border);
     border-top: 5px solid var(--one-green);
@@ -181,25 +181,27 @@ a {
 
 .navigation-card:hover {
     transform: translateY(-3px);
-    background: #ffffff;
+    background: var(--one-white);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
 }
 
 .navigation-card h3 {
+    margin: 0;
     color: var(--one-dark-green);
     font-size: clamp(20px, 2.4vw, 26px);
     line-height: 1.3;
 }
 
-/* Fifth card centered under the first four */
+/* FIFTH CARD CENTERED UNDER THE FIRST FOUR */
 
 .terms-card {
     grid-column: 1 / -1;
     width: calc(50% - 10px);
     justify-self: center;
+    align-self: stretch;
 }
 
-/* Keyboard accessibility */
+/* KEYBOARD ACCESSIBILITY */
 
 .phone:focus-visible,
 .navigation-card:focus-visible {
@@ -207,7 +209,7 @@ a {
     outline-offset: 4px;
 }
 
-/* Tablet */
+/* TABLET */
 
 @media (max-width: 900px) {
     .site-header {
@@ -227,11 +229,12 @@ a {
     }
 
     .navigation-card {
-        min-height: 135px;
+        min-height: 150px;
+        padding: 22px;
     }
 }
 
-/* Mobile */
+/* MOBILE */
 
 @media (max-width: 600px) {
     .site-header {
@@ -279,6 +282,7 @@ a {
     }
 
     .navigation-card {
+        width: 100%;
         min-height: 115px;
         padding: 20px;
     }
@@ -289,10 +293,11 @@ a {
 
     .terms-card {
         grid-column: auto;
-        width: 100%;
         justify-self: stretch;
     }
 }
+
+/* EXTRA-SMALL PHONES */
 
 @media (max-width: 360px) {
     .logo {
