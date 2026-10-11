@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,9 +55,8 @@
         .service-item {
             display: flex;
             align-items: center;
-            min-height: 78px;
-            gap: 12px;
-            padding: 18px;
+            min-height: 65px;
+            padding: 15px;
             border: 1px solid #ddd;
             border-left: 4px solid #2f8c2f;
             border-radius: 7px;
@@ -64,14 +64,6 @@
             font-size: 17px;
             font-weight: bold;
         }
-
-        .service-check {
-            flex-shrink: 0;
-            color: #2f8c2f;
-            font-size: 22px;
-        }
-
-        /* Request an unlisted service */
 
         .request-section {
             margin-top: 45px;
@@ -255,35 +247,12 @@
         <h2>Lawn Care</h2>
 
         <div class="service-grid">
-            <div class="service-item">
-                <span class="service-check" aria-hidden="true">&#10003;</span>
-                <span>Mowing</span>
-            </div>
-
-            <div class="service-item">
-                <span class="service-check" aria-hidden="true">&#10003;</span>
-                <span>Weedeating</span>
-            </div>
-
-            <div class="service-item">
-                <span class="service-check" aria-hidden="true">&#10003;</span>
-                <span>Edging</span>
-            </div>
-
-            <div class="service-item">
-                <span class="service-check" aria-hidden="true">&#10003;</span>
-                <span>Blowing</span>
-            </div>
-
-            <div class="service-item">
-                <span class="service-check" aria-hidden="true">&#10003;</span>
-                <span>Fertilization</span>
-            </div>
-
-            <div class="service-item">
-                <span class="service-check" aria-hidden="true">&#10003;</span>
-                <span>Spot Spraying &amp; Weed Control</span>
-            </div>
+            <div class="service-item">Mowing</div>
+            <div class="service-item">Weedeating</div>
+            <div class="service-item">Edging</div>
+            <div class="service-item">Blowing</div>
+            <div class="service-item">Fertilization</div>
+            <div class="service-item">Spot Spraying &amp; Weed Control</div>
         </div>
     </section>
 
@@ -291,45 +260,14 @@
         <h2>Landscaping</h2>
 
         <div class="service-grid">
-            <div class="service-item">
-                <span class="service-check" aria-hidden="true">&#10003;</span>
-                <span>Flower Beds</span>
-            </div>
-
-            <div class="service-item">
-                <span class="service-check" aria-hidden="true">&#10003;</span>
-                <span>Planting Plants</span>
-            </div>
-
-            <div class="service-item">
-                <span class="service-check" aria-hidden="true">&#10003;</span>
-                <span>Mulch Installation</span>
-            </div>
-
-            <div class="service-item">
-                <span class="service-check" aria-hidden="true">&#10003;</span>
-                <span>Decorative Rock Installation</span>
-            </div>
-
-            <div class="service-item">
-                <span class="service-check" aria-hidden="true">&#10003;</span>
-                <span>Sod Installation</span>
-            </div>
-
-            <div class="service-item">
-                <span class="service-check" aria-hidden="true">&#10003;</span>
-                <span>Shrub &amp; Hedge Trimming</span>
-            </div>
-
-            <div class="service-item">
-                <span class="service-check" aria-hidden="true">&#10003;</span>
-                <span>Bush &amp; Brush Removal</span>
-            </div>
-
-            <div class="service-item">
-                <span class="service-check" aria-hidden="true">&#10003;</span>
-                <span>Tree Trimming</span>
-            </div>
+            <div class="service-item">Flower Beds</div>
+            <div class="service-item">Planting Plants</div>
+            <div class="service-item">Mulch Installation</div>
+            <div class="service-item">Decorative Rock Installation</div>
+            <div class="service-item">Sod Installation</div>
+            <div class="service-item">Shrub &amp; Hedge Trimming</div>
+            <div class="service-item">Bush &amp; Brush Removal</div>
+            <div class="service-item">Tree Trimming</div>
         </div>
     </section>
 
@@ -337,9 +275,9 @@
         <h2>Request a Service Not Listed</h2>
 
         <p class="request-intro">
-            Don't see the service you need? Tell us a little about your
-            project. We'll prepare a text message you can send directly
-            to ONE Lawns &amp; Landscaping.
+            Don't see the service you need? Tell us about your project.
+            We'll prepare a text message you can send directly to
+            ONE Lawns &amp; Landscaping.
         </p>
 
         <form class="request-form" id="service-request-form">
@@ -357,14 +295,12 @@
             </div>
 
             <div class="form-field">
-                <label for="customer-phone">Your Phone Number *</label>
+                <label for="other-contact">Other Contact Info (Optional)</label>
                 <input
-                    type="tel"
-                    id="customer-phone"
-                    name="customer-phone"
-                    placeholder="Your best contact number"
-                    autocomplete="tel"
-                    required
+                    type="text"
+                    id="other-contact"
+                    name="other-contact"
+                    placeholder="Email or another way to reach you"
                 >
             </div>
 
@@ -396,7 +332,7 @@
                 <textarea
                     id="project-details"
                     name="project-details"
-                    placeholder="Tell us about the project, size, or anything else we should know."
+                    placeholder="Tell us about the project or anything else we should know."
                 ></textarea>
             </div>
 
@@ -425,12 +361,12 @@
         event.preventDefault();
 
         const name = document.getElementById("customer-name").value.trim();
-        const phone = document.getElementById("customer-phone").value.trim();
+        const otherContact = document.getElementById("other-contact").value.trim();
         const address = document.getElementById("property-address").value.trim();
         const service = document.getElementById("requested-service").value.trim();
         const details = document.getElementById("project-details").value.trim();
 
-        if (!name || !phone || !address || !service) {
+        if (!name || !address || !service) {
             requestForm.reportValidity();
             return;
         }
@@ -438,18 +374,19 @@
         let message =
             "Hi ONE Lawns & Landscaping! I'd like to request a service not listed on your website.\n\n" +
             "Name: " + name + "\n" +
-            "My Phone Number: " + phone + "\n" +
             "Property Address: " + address + "\n" +
             "Service Requested: " + service;
+
+        if (otherContact) {
+            message += "\nOther Contact Info: " + otherContact;
+        }
 
         if (details) {
             message += "\nAdditional Details: " + details;
         }
 
-        const smsUrl =
+        window.location.href =
             "sms:+14059851213?body=" + encodeURIComponent(message);
-
-        window.location.href = smsUrl;
     });
 </script>
 
