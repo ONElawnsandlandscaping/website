@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Complete Lawn Care | ONE Lawns & Landscaping</title>
+
+<style>
+* { box-sizing: border-box; }
+
+:root {
+  --green: #286b3b;
+  --dark-green: #174a29;
+  --light-green: #edf4eb;
+  --background: #f5f6f4;
+  --border: #d6dfd3;
+  --text: #263027;
+  --muted: #606a60;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+header {
+  background: white;
+  padding: 10px 15px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+header a { display: inline-block; }
+
+.logo {
+  display: block;
+  width: 170px !important;
+  height: 85px !important;
+  max-width: 70vw !important;
+  max-height: 85px !important;
+  object-fit: contain !important;
+  margin: auto;
+}
+
+main {
+  max-width: 1000px;
+  width: calc(100% - 32px);
+  margin: auto;
+  padding: 32px 0 45px;
+}
+
+h1, h2, h3 {
+  color: var(--dark-green);
+  line-height: 1.3;
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  margin: 0 0 12px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0 0 12px;
+}
+
+.intro {
+  text-align: center;
+  max-width: 760px;
+  color: var(--muted);
+  margin: 0 auto 30px;
+}
+
+.info-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--green);
+  border-radius: 10px;
+  padding: clamp(20px, 3vw, 30px);
+  margin-bottom: 20px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.04);
+}
+
+.info-card p {
+  margin: 0 0 13px;
+}
+
+.info-card p:last-child { margin-bottom: 0; }
+
+.info-card ul {
+  padding-left: 24px;
+  margin: 10px 0 0;
+}
+
+.info-card li { margin-bottom: 8px; }
+
+.season {
+  background: var(--light-green);
+  border-radius: 7px;
+  padding: 15px 17px;
+  margin-top: 14px;
+}
+
+.season h3 {
+  font-size: 1.1rem;
+  margin: 0 0 6px;
+}
+
+.season p { margin: 0; }
+
+.notice {
+  border-left: 4px solid var(--green);
+  background: var(--light-green);
+  border-radius: 5px;
+  padding: 14px 16px;
+  margin-top: 16px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 12px 22px;
+  background: var(--green);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-button:hover { background: var(--dark-green); }
+
+footer {
+  padding: 24px 15px;
+  background: var(--dark-green);
+  color: white;
+  text-align: center;
+}
+
+footer p { margin: 5px; }
+footer a { color: white; }
+
+@media (max-width: 550px) {
+  main {
+    width: calc(100% - 22px);
+    padding-top: 25px;
+  }
+
+  .info-card { padding: 19px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" aria-label="ONE Lawns & Landscaping home">
+    <img class="logo" src="logo.png" alt="ONE Lawns & Landscaping">
+  </a>
+</header>
+
+<main>
+  <h1>Complete Lawn Care</h1>
+
+  <p class="intro">
+    Learn what is included with fertilization and spot spraying,
+    how seasonal lawn care works, and what to expect from our treatments.
+  </p>
+
+  <section class="info-card">
+    <h2>Fertilization</h2>
+
+    <p>
+      Fertilization helps provide your lawn with nutrients that support
+      healthy growth, color, and overall lawn condition. The timing and
+      amount of fertilizer needed depend on the grass type, lawn condition,
+      seasonal needs, and the product being used.
+    </p>
+
+    <p>
+      Bermuda grass changes its growth throughout the year. Fertilization
+      should be adjusted to match its growing season rather than applied
+      on the same schedule year-round.
+    </p>
+
+    <div class="season">
+      <h3>Spring — After Green-Up</h3>
+      <p>
+        Once Bermuda grass has come out of dormancy and is actively growing,
+        fertilization may help support its return to active growth. Timing
+        depends on lawn conditions and the weather.
+      </p>
+    </div>
+
+    <div class="season">
+      <h3>Summer — Active Growth</h3>
+      <p>
+        During active growth, Bermuda grass may benefit from additional
+        nutrients when needed. Applications should account for the lawn's
+        condition, watering, weather, and the product's directions.
+      </p>
+    </div>
+
+    <div class="season">
+      <h3>Fall — Slowing Growth</h3>
+      <p>
+        As temperatures cool and growth slows, fertilization needs change.
+        Late-season applications should be considered carefully instead
+        of continuing a summer schedule automatically.
+      </p>
+    </div>
+
+    <div class="season">
+      <h3>Winter — Dormant Grass</h3>
+      <p>
+        Dormant Bermuda grass generally does not need routine nitrogen
+        fertilization. The next growing season's needs can be considered
+        as the lawn approaches spring green-up.
+      </p>
+    </div>
+
+    <div class="notice">
+      <strong>Important:</strong> These are general seasonal guidelines,
+      not a guaranteed application schedule. Fertilizer selection, timing,
+      and amounts depend on lawn needs, weather, soil conditions, and
+      product label directions.
+    </div>
+  </section>
+
+  <section class="info-card">
+    <h2>Spot Spraying &amp; Weed Control</h2>
+
+    <p>
+      Spot spraying focuses on localized areas where weeds are present.
+      This can include appropriate areas in flower beds, sidewalk cracks,
+      driveway cracks, and similar spots around the property.
+    </p>
+
+    <p>
+      <strong>Spot spraying is performed during each service visit when
+      needed.</strong> We target appropriate areas where weeds are present
+      rather than automatically spraying every area on every visit.
+    </p>
+
+    <div class="notice">
+      <strong>Please note:</strong> Spot spraying is not a whole-lawn weed
+      control treatment. Treating weeds throughout an entire lawn is a
+      different service and is not included in the spot-spraying portion
+      of this plan.
+    </div>
+  </section>
+
+  <section class="info-card">
+    <h2>Treatment Guidelines</h2>
+
+    <p>
+      Every lawn and property is different. Treatment decisions depend
+      on the weeds present, grass and landscape conditions, weather,
+      and the treatment product's intended use.
+    </p>
+
+    <ul>
+      <li>Products are used according to their label directions.</li>
+      <li>Application timing depends on weather and site conditions.</li>
+      <li>Not every area will require treatment during every visit.</li>
+      <li>Results can vary based on weed type, lawn condition, and other factors.</li>
+    </ul>
+
+    <p style="margin-top:15px">
+      If you have questions about whether a particular lawn or landscape
+      area needs treatment, you can include that information in your quote
+      request.
+    </p>
+  </section>
+
+  <div class="button-row">
+    <a class="back-button" href="quote.html">← Back to Quote</a>
+  </div>
+</main>
+
+<footer>
+  <p><strong>ONE Lawns &amp; Landscaping</strong></p>
+  <p>Anything Worth Doing, Is Worth Doing Right.</p>
+  <p><a href="tel:+14059851213">(405) 985-1213</a></p>
+  <p>Yukon • Mustang • El Reno • Oklahoma City</p>
+</footer>
+
+</body>
+</html>
