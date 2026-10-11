@@ -7,6 +7,10 @@
 <title>Get a Quote | ONE Lawns & Landscaping</title>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --green: #286b3b;
   --dark-green: #174a29;
@@ -17,42 +21,44 @@
   --muted: #606a60;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 20px;
 }
 
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
   background: var(--background);
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
 }
 
 header {
   background: white;
+  padding: 10px 15px;
   text-align: center;
-  padding: 18px 15px;
   border-bottom: 1px solid var(--border);
+}
+
+header a {
+  display: inline-block;
 }
 
 .logo {
   display: block;
-  width: min(260px, 80%);
-  max-height: 150px;
-  object-fit: contain;
-  margin: auto;
+  width: 170px !important;
+  height: 85px !important;
+  max-width: 70vw !important;
+  max-height: 85px !important;
+  object-fit: contain !important;
+  margin: 0 auto;
 }
 
 main {
-  width: min(1100px, calc(100% - 32px));
+  width: 100%;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 35px 0 45px;
+  padding: 35px 24px 45px;
 }
 
 h1, h2, h3 {
@@ -62,25 +68,25 @@ h1, h2, h3 {
 
 h1 {
   text-align: center;
-  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-size: 2.5rem;
   margin: 0 0 12px;
 }
 
 h2 {
-  font-size: 1.65rem;
+  font-size: 1.7rem;
   margin-top: 0;
 }
 
 .intro {
-  text-align: center;
-  color: var(--muted);
   max-width: 750px;
   margin: 0 auto 35px;
+  text-align: center;
+  color: var(--muted);
 }
 
 .section-title {
   text-align: center;
-  margin: 42px 0 20px;
+  margin: 40px 0 22px;
 }
 
 .plans {
@@ -90,70 +96,71 @@ h2 {
 }
 
 .plan-card {
+  width: 100%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   text-align: left;
-  width: 100%;
-  padding: 25px;
+  padding: 24px;
   background: white;
   color: var(--text);
   border: 1px solid var(--border);
-  border-top: 7px solid var(--green);
-  border-radius: 12px;
+  border-top: 6px solid var(--green);
+  border-radius: 10px;
   box-shadow: 0 3px 12px rgba(0,0,0,.05);
   font: inherit;
   cursor: pointer;
   transition: transform .15s, box-shadow .15s;
 }
 
-.plan-card:hover,
-.plan-card:focus-visible {
+.plan-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,.10);
-  outline: 2px solid var(--green);
-  outline-offset: 2px;
+  box-shadow: 0 7px 18px rgba(0,0,0,.1);
 }
 
 .plan-card h3 {
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   margin: 0 0 10px;
 }
 
 .plan-card p {
-  margin: 0 0 12px;
   color: var(--muted);
+  margin: 0 0 10px;
 }
 
 .plan-card ul {
-  padding-left: 21px;
-  margin: 5px 0 16px;
+  padding-left: 22px;
+  margin: 8px 0 22px;
 }
 
-.plan-action {
+.plan-link {
   display: block;
   text-align: center;
-  color: var(--green-dark);
-  background: var(--light-green);
-  border-radius: 6px;
-  padding: 10px;
   margin-top: auto;
+  padding: 10px;
+  border-radius: 6px;
+  background: var(--light-green);
+  color: var(--dark-green);
   font-weight: bold;
 }
 
 .custom-card {
-  display: block;
+  width: 100%;
   max-width: 650px;
+  display: block;
   margin: 22px auto 0;
   padding: 25px;
   background: white;
-  border: 2px solid var(--green);
-  border-radius: 12px;
   color: var(--text);
+  border: 2px solid var(--green);
+  border-radius: 10px;
+  font: inherit;
   text-align: center;
   cursor: pointer;
-  font: inherit;
-  width: 100%;
-  box-shadow: 0 3px 12px rgba(0,0,0,.05);
+}
+
+.custom-card:hover {
+  background: var(--light-green);
 }
 
 .custom-card h3 {
@@ -161,22 +168,18 @@ h2 {
   font-size: 1.5rem;
 }
 
-.custom-card:hover {
-  background: var(--light-green);
+.custom-card p {
+  color: var(--muted);
 }
 
 .panel {
   background: white;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: clamp(18px, 4vw, 32px);
+  border-radius: 10px;
+  padding: 28px;
   margin-top: 35px;
   box-shadow: 0 3px 12px rgba(0,0,0,.04);
   scroll-margin-top: 20px;
-}
-
-.panel > p {
-  color: var(--muted);
 }
 
 .hidden {
@@ -209,22 +212,17 @@ select,
 textarea {
   width: 100%;
   min-width: 0;
-  padding: 12px;
+  padding: 11px 12px;
   border: 1px solid #bdc9b9;
-  border-radius: 7px;
+  border-radius: 6px;
   background: white;
   color: var(--text);
   font: inherit;
 }
 
 textarea {
-  min-height: 115px;
+  min-height: 110px;
   resize: vertical;
-}
-
-input:focus, select:focus, textarea:focus {
-  outline: 2px solid var(--green);
-  outline-offset: 1px;
 }
 
 .choice-grid {
@@ -238,16 +236,11 @@ input:focus, select:focus, textarea:focus {
   align-items: flex-start;
   gap: 10px;
   padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
   background: white;
+  border: 1px solid var(--border);
+  border-radius: 7px;
   cursor: pointer;
   font-weight: normal;
-}
-
-.choice:has(input:checked) {
-  border-color: var(--green);
-  background: var(--light-green);
 }
 
 .choice input {
@@ -256,52 +249,52 @@ input:focus, select:focus, textarea:focus {
   flex-shrink: 0;
 }
 
-.primary-button,
-.secondary-button {
+.choice:has(input:checked) {
+  border-color: var(--green);
+  background: var(--light-green);
+}
+
+button, .button {
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  border: 0;
+  justify-content: center;
+  padding: 12px 18px;
   border-radius: 7px;
-  padding: 13px 18px;
+  border: none;
+  background: var(--green);
+  color: white;
   font: inherit;
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
 }
 
-.primary-button {
-  background: var(--green);
-  color: white;
-}
-
-.primary-button:hover {
+button:hover, .button:hover {
   background: var(--dark-green);
 }
 
-.secondary-button {
+.submit-button {
+  width: 100%;
+}
+
+.button.secondary {
   background: white;
   color: var(--dark-green);
   border: 1px solid var(--green);
 }
 
-.submit-button {
-  width: 100%;
-  font-size: 1.05rem;
-}
-
 .note {
   max-width: 850px;
-  text-align: center;
+  margin: 12px auto 0;
   color: var(--muted);
   font-size: .9rem;
-  margin: 12px auto 0;
+  text-align: center;
 }
 
 .message-notes {
-  margin-top: 20px;
-  padding-top: 14px;
   border-top: 1px solid var(--border);
+  margin-top: 22px;
+  padding-top: 12px;
 }
 
 .button-row {
@@ -313,10 +306,10 @@ input:focus, select:focus, textarea:focus {
 }
 
 footer {
+  padding: 22px 15px;
   background: var(--dark-green);
   color: white;
   text-align: center;
-  padding: 22px 15px;
 }
 
 footer p {
@@ -337,10 +330,13 @@ footer a {
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 550px) {
   main {
-    width: calc(100% - 22px);
-    padding-top: 25px;
+    padding: 25px 12px 35px;
+  }
+
+  h1 {
+    font-size: 2rem;
   }
 
   .form-grid,
@@ -362,49 +358,52 @@ footer a {
 <body>
 
 <header>
-  <a href="index.html" aria-label="ONE Lawns & Landscaping home">
-    <img class="logo" src="logo.png" alt="ONE Lawns & Landscaping">
+  <a href="index.html">
+    <img
+      class="logo"
+      src="logo.png"
+      alt="ONE Lawns & Landscaping"
+      style="width:170px!important;height:85px!important;max-height:85px!important;object-fit:contain!important"
+    >
   </a>
 </header>
 
 <main>
 
   <h1>Get a Quote</h1>
+
   <p class="intro">
-    Choose a lawn care plan for recurring service or request a custom quote
-    for the specific work you need. Select an option below to get started.
+    Choose a recurring lawn care plan or request a custom quote for a specific project.
+    Select an option below to get started.
   </p>
 
   <h2 class="section-title">Recurring Lawn Care Plans</h2>
 
   <div class="plans">
 
-    <button type="button" class="plan-card"
-      data-plan="Essential Lawn Care">
+    <button type="button" class="plan-card" data-plan="Essential Lawn Care">
       <h3>Essential Lawn Care</h3>
-      <p>Our core lawn maintenance services to keep your yard looking neat.</p>
+      <p>Core lawn maintenance to keep your yard neat and tidy.</p>
       <ul>
         <li>Mowing</li>
         <li>Weedeating</li>
         <li>Edging</li>
         <li>Blowing</li>
       </ul>
-      <span class="plan-action">Select Essential Lawn Care →</span>
+      <span class="plan-link">Select Essential Lawn Care →</span>
     </button>
 
-    <button type="button" class="plan-card"
-      data-plan="Enhanced Lawn Care">
+    <button type="button" class="plan-card" data-plan="Enhanced Lawn Care">
       <h3>Enhanced Lawn Care</h3>
-      <p>Essential lawn care with additional shrub and hedge maintenance.</p>
+      <p>Essential lawn care with added shrub and hedge maintenance.</p>
       <ul>
         <li>Everything in Essential</li>
         <li>Shrub &amp; Hedge Trimming</li>
       </ul>
-      <span class="plan-action">Select Enhanced Lawn Care →</span>
+      <span class="plan-link">Select Enhanced Lawn Care →</span>
     </button>
 
-    <button type="button" class="plan-card"
-      data-plan="Complete Lawn Care">
+    <button type="button" class="plan-card" data-plan="Complete Lawn Care">
       <h3>Complete Lawn Care</h3>
       <p>Our most comprehensive recurring lawn care option.</p>
       <ul>
@@ -412,7 +411,7 @@ footer a {
         <li>Fertilization</li>
         <li>Weed Control &amp; Spot Spraying</li>
       </ul>
-      <span class="plan-action">Select Complete Lawn Care →</span>
+      <span class="plan-link">Select Complete Lawn Care →</span>
     </button>
 
   </div>
@@ -423,45 +422,42 @@ footer a {
     <h3>Custom Quote</h3>
     <p>
       Need a flower bed, mulch, decorative rock, leveling, sod, trimming,
-      or another service? Select the work you need and send us your request.
+      or another service? Choose your services and send us a quote request.
     </p>
-    <span class="plan-action">Request a Custom Quote →</span>
+    <span class="plan-link">Request a Custom Quote →</span>
   </button>
 
-  <!-- RECURRING PLAN REQUEST -->
+  <!-- RECURRING PLAN FORM -->
+
   <section class="panel hidden" id="planRequest">
-    <h2 id="planHeading">Request a Lawn Care Plan</h2>
-    <p id="planDescription">
-      Fill in your information and we will prepare a text message with your selected plan.
-    </p>
+    <h2 id="planHeading">Lawn Care Plan Request</h2>
+    <p>Complete the information below to prepare your text request.</p>
 
     <form id="recurringForm" class="form-grid">
 
       <div class="field full">
-        <label for="planName">Selected Plan</label>
-        <input id="planName" name="planName" readonly required>
+        <label for="planName">Selected Plan *</label>
+        <input id="planName" readonly required>
       </div>
 
       <div class="field">
         <label for="customerName">Full Name *</label>
-        <input id="customerName" name="customerName" autocomplete="name" required>
+        <input id="customerName" autocomplete="name" required>
       </div>
 
       <div class="field">
         <label for="propertyAddress">Property Address *</label>
-        <input id="propertyAddress" name="propertyAddress"
-          autocomplete="street-address" required>
+        <input id="propertyAddress" autocomplete="street-address" required>
       </div>
 
       <div class="field full">
         <label for="otherContact">Other Contact Information (Optional)</label>
-        <input id="otherContact" name="otherContact"
-          placeholder="Email or other contact information">
+        <input id="otherContact" placeholder="Email or other contact information">
       </div>
 
       <div class="field full">
         <label for="frequency">Service Frequency *</label>
-        <select id="frequency" name="frequency" required>
+        <select id="frequency" required>
           <option value="">Choose frequency</option>
           <option value="Weekly (every 7 days)">Weekly — every 7 days</option>
           <option value="Biweekly (every 14 days)">Biweekly — every 14 days</option>
@@ -490,35 +486,26 @@ footer a {
 
       <div class="field full">
         <label for="planDetails">Additional Information (Optional)</label>
-        <textarea id="planDetails"
-          placeholder="Anything else we should know?"></textarea>
+        <textarea id="planDetails" placeholder="Anything else we should know?"></textarea>
       </div>
 
       <div class="field full">
-        <button class="primary-button submit-button" type="submit">
-          Text My Plan Request
-        </button>
+        <button class="submit-button" type="submit">Text My Plan Request</button>
       </div>
+
     </form>
 
     <div class="message-notes">
-      <p class="note">
-        Your messaging app will open with your request prepared.
-        Review it and press Send to submit it.
-      </p>
-      <p class="note">
-        This feature works best on a mobile phone. Desktop computers may not
-        support opening a text message automatically.
-      </p>
+      <p class="note">Your messaging app will open with your request prepared. Review it and press Send to submit it.</p>
+      <p class="note">This feature works best on a mobile phone. Desktop computers may not support opening a text message automatically.</p>
     </div>
   </section>
 
-  <!-- CUSTOM QUOTE REQUEST -->
+  <!-- CUSTOM QUOTE FORM -->
+
   <section class="panel hidden" id="customQuote">
     <h2>Custom Quote Request</h2>
-    <p>
-      Choose Lawn Care or Landscaping, then select all the services you need.
-    </p>
+    <p>Choose a category and select all the services you need.</p>
 
     <form id="customForm" class="form-grid">
 
@@ -554,39 +541,29 @@ footer a {
 
       <div class="field full">
         <label for="customContact">Other Contact Information (Optional)</label>
-        <input id="customContact"
-          placeholder="Email or other contact information">
+        <input id="customContact" placeholder="Email or other contact information">
       </div>
 
       <div class="field full">
         <label for="customDetails">Additional Details (Optional)</label>
-        <textarea id="customDetails"
-          placeholder="Tell us anything else about the job..."></textarea>
+        <textarea id="customDetails" placeholder="Tell us anything else about the job..."></textarea>
       </div>
 
       <div class="field full">
-        <button class="primary-button submit-button" type="submit">
-          Request a Custom Quote
-        </button>
+        <button class="submit-button" type="submit">Request a Custom Quote</button>
       </div>
 
     </form>
 
     <div class="message-notes">
-      <p class="note">
-        Your messaging app will open with your request prepared.
-        Review it and press Send to submit it.
-      </p>
-      <p class="note">
-        This feature works best on a mobile phone. Desktop computers may not
-        support opening a text message automatically.
-      </p>
+      <p class="note">Your messaging app will open with your request prepared. Review it and press Send to submit it.</p>
+      <p class="note">This feature works best on a mobile phone. Desktop computers may not support opening a text message automatically.</p>
     </div>
   </section>
 
   <div class="button-row">
-    <a class="secondary-button" href="index.html">Home</a>
-    <a class="secondary-button" href="services.html">View All Services</a>
+    <a class="button secondary" href="index.html">Home</a>
+    <a class="button secondary" href="services.html">View All Services</a>
   </div>
 
 </main>
@@ -627,25 +604,15 @@ const landscapingServices = [
 
 const planServices = {
   'Essential Lawn Care': [
-    'Mowing',
-    'Weedeating',
-    'Edging',
-    'Blowing'
+    'Mowing', 'Weedeating', 'Edging', 'Blowing'
   ],
   'Enhanced Lawn Care': [
-    'Mowing',
-    'Weedeating',
-    'Edging',
-    'Blowing',
+    'Mowing', 'Weedeating', 'Edging', 'Blowing',
     'Shrub & Hedge Trimming'
   ],
   'Complete Lawn Care': [
-    'Mowing',
-    'Weedeating',
-    'Edging',
-    'Blowing',
-    'Shrub & Hedge Trimming',
-    'Fertilization',
+    'Mowing', 'Weedeating', 'Edging', 'Blowing',
+    'Shrub & Hedge Trimming', 'Fertilization',
     'Weed Control & Spot Spraying'
   ]
 };
@@ -653,18 +620,12 @@ const planServices = {
 const planSection = document.getElementById('planRequest');
 const customSection = document.getElementById('customQuote');
 const planName = document.getElementById('planName');
-const planHeading = document.getElementById('planHeading');
 
 function openPlan(plan) {
   customSection.classList.add('hidden');
   planSection.classList.remove('hidden');
-
   planName.value = plan;
-  planHeading.textContent = plan + ' Request';
-
-  document.getElementById('planDescription').textContent =
-    'You selected ' + plan +
-    '. Fill in the information below and we will prepare a text request for this plan.';
+  document.getElementById('planHeading').textContent = plan + ' Request';
 
   planSection.scrollIntoView({
     behavior: 'smooth',
@@ -673,9 +634,7 @@ function openPlan(plan) {
 }
 
 document.querySelectorAll('.plan-card').forEach(card => {
-  card.addEventListener('click', () => {
-    openPlan(card.dataset.plan);
-  });
+  card.addEventListener('click', () => openPlan(card.dataset.plan));
 });
 
 document.getElementById('openCustom').addEventListener('click', () => {
@@ -688,9 +647,6 @@ document.getElementById('openCustom').addEventListener('click', () => {
   });
 });
 
-const categoryInputs = document.querySelectorAll('input[name="category"]');
-const customServices = document.getElementById('customServices');
-
 function renderServices() {
   const category = document.querySelector(
     'input[name="category"]:checked'
@@ -700,7 +656,8 @@ function renderServices() {
     ? lawnServices
     : landscapingServices;
 
-  customServices.replaceChildren();
+  const container = document.getElementById('customServices');
+  container.replaceChildren();
 
   services.forEach((service, index) => {
     const label = document.createElement('label');
@@ -712,41 +669,34 @@ function renderServices() {
     checkbox.value = service;
     checkbox.id = 'customService' + index;
 
-    label.appendChild(checkbox);
-    label.appendChild(document.createTextNode(service));
-    customServices.appendChild(label);
+    label.append(checkbox, document.createTextNode(service));
+    container.appendChild(label);
   });
 }
 
-categoryInputs.forEach(input => {
+document.querySelectorAll('input[name="category"]').forEach(input => {
   input.addEventListener('change', renderServices);
 });
 
 renderServices();
 
-/* Show the custom interval field only when needed. */
 const frequency = document.getElementById('frequency');
 const intervalWrap = document.getElementById('intervalWrap');
 const intervalInput = document.getElementById('customInterval');
 
 frequency.addEventListener('change', () => {
-  const isCustom = frequency.value === 'Custom interval';
+  const custom = frequency.value === 'Custom interval';
 
-  intervalWrap.classList.toggle('hidden', !isCustom);
-  intervalInput.required = isCustom;
+  intervalWrap.classList.toggle('hidden', !custom);
+  intervalInput.required = custom;
 
-  if (!isCustom) {
-    intervalInput.value = '';
-  }
+  if (!custom) intervalInput.value = '';
 });
 
-/* Recurring lawn care plan text request. */
 document.getElementById('recurringForm').addEventListener('submit', event => {
   event.preventDefault();
 
-  const payment = document.querySelector(
-    'input[name="payment"]:checked'
-  );
+  const payment = document.querySelector('input[name="payment"]:checked');
 
   if (!payment) {
     alert('Please select a payment schedule.');
@@ -763,13 +713,11 @@ document.getElementById('recurringForm').addEventListener('submit', event => {
     }
   }
 
-  const plan = planName.value;
-
   const body = [
     'ONE Lawns & Landscaping - Lawn Care Plan Request',
     '',
-    'Selected Plan: ' + plan,
-    'Included Services: ' + planServices[plan].join(', '),
+    'Selected Plan: ' + planName.value,
+    'Included Services: ' + planServices[planName.value].join(', '),
     'Name: ' + document.getElementById('customerName').value.trim(),
     'Property Address: ' + document.getElementById('propertyAddress').value.trim(),
     'Other Contact Information: ' +
@@ -787,17 +735,14 @@ document.getElementById('recurringForm').addEventListener('submit', event => {
     'sms:' + phoneNumber + '?body=' + encodeURIComponent(body);
 });
 
-/* Custom quote text request with multiple service selections. */
 document.getElementById('customForm').addEventListener('submit', event => {
   event.preventDefault();
 
-  const selectedServices = [
-    ...document.querySelectorAll(
-      'input[name="customService"]:checked'
-    )
+  const selected = [
+    ...document.querySelectorAll('input[name="customService"]:checked')
   ].map(input => input.value);
 
-  if (selectedServices.length === 0) {
+  if (!selected.length) {
     alert('Please select at least one service.');
     return;
   }
@@ -810,7 +755,7 @@ document.getElementById('customForm').addEventListener('submit', event => {
     'ONE Lawns & Landscaping - Custom Quote Request',
     '',
     'Category: ' + category,
-    'Requested Services: ' + selectedServices.join(', '),
+    'Requested Services: ' + selected.join(', '),
     'Name: ' + document.getElementById('customName').value.trim(),
     'Property Address: ' + document.getElementById('customAddress').value.trim(),
     'Other Contact Information: ' +
