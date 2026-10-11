@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get a Quote | ONE Lawns & Landscaping</title>
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html">
+      <img class="site-logo" src="logo.png" alt="ONE Lawns & Landscaping logo">
+    </a>
+  </header>
+
+  <main class="page-wrap">
+    <h1 class="page-title">Get a Quote</h1>
+    <p class="page-intro">
+      Choose a recurring lawn care plan or request a custom quote for a specific project.
+      No online prices are listed because every property and project is different.
+    </p>
+
+    <h2 class="page-title" style="font-size:1.8rem;margin-top:32px">
+      Recurring Lawn Care Plans
+    </h2>
+
+    <div class="plans">
+      <section class="plan">
+        <h2>Essential Lawn Care</h2>
+        <p>Core lawn maintenance to keep your yard neat and tidy.</p>
+        <ul>
+          <li>Mowing</li>
+          <li>Weedeating</li>
+          <li>Edging</li>
+          <li>Blowing</li>
+        </ul>
+        <button type="button" class="plan-button" data-plan="Essential Lawn Care">
+          Request This Plan
+        </button>
+      </section>
+
+      <section class="plan">
+        <h2>Enhanced Lawn Care</h2>
+        <p>Essential lawn care with added shrub and hedge maintenance.</p>
+        <ul>
+          <li>Everything in Essential</li>
+          <li>Shrub &amp; Hedge Trimming</li>
+        </ul>
+        <button type="button" class="plan-button" data-plan="Enhanced Lawn Care">
+          Request This Plan
+        </button>
+      </section>
+
+      <section class="plan">
+        <h2>Complete Lawn Care</h2>
+        <p>Our most comprehensive recurring lawn care option.</p>
+        <ul>
+          <li>Everything in Enhanced</li>
+          <li>Fertilization</li>
+          <li>Weed Control &amp; Spot Spraying</li>
+        </ul>
+        <a class="button secondary" href="complete-lawn-care.html">
+          Learn About Treatments
+        </a>
+        <button type="button" class="plan-button" data-plan="Complete Lawn Care">
+          Request This Plan
+        </button>
+      </section>
+    </div>
+
+    <section class="content-card" id="planRequest">
+      <h2>Recurring Plan Request</h2>
+      <p>Select a plan above to start, then fill in your information.</p>
+
+      <form id="recurringForm" class="form-grid">
+        <div class="field">
+          <label for="planName">Selected Plan *</label>
+          <select id="planName" required>
+            <option value="">Choose a plan</option>
+            <option>Essential Lawn Care</option>
+            <option>Enhanced Lawn Care</option>
+            <option>Complete Lawn Care</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="customerName">Name *</label>
+          <input id="customerName" required>
+        </div>
+
+        <div class="field full">
+          <label for="propertyAddress">Property Address *</label>
+          <input id="propertyAddress" required>
+        </div>
+
+        <div class="field full">
+          <label for="otherContact">Other Contact Information (Optional)</label>
+          <input id="otherContact" placeholder="Email or other contact info">
+        </div>
+
+        <div class="field full">
+          <label for="frequency">Service Frequency *</label>
+          <select id="frequency" required>
+            <option value="">Choose frequency</option>
+            <option>Weekly (every 7 days)</option>
+            <option>Biweekly (every 14 days)</option>
+            <option value="Custom interval">Custom interval (3–13 days)</option>
+          </select>
+        </div>
+
+        <div class="field full" id="customIntervalWrap" hidden>
+          <label for="customInterval">Custom interval (3–13 days) *</label>
+          <input id="customInterval" type="number" min="3" max="13" step="1">
+        </div>
+
+        <div class="field full">
+          <span class="field-label">Payment Schedule *</span>
+          <label class="choice">
+            <input type="radio" name="payment" value="On the date each service is provided" required>
+            On the date each service is provided
+          </label>
+          <label class="choice">
+            <input type="radio" name="payment" value="At the start of every month" required>
+            At the start of every month
+          </label>
+        </div>
+
+        <div class="field full">
+          <label for="planDetails">Additional Information (Optional)</label>
+          <textarea id="planDetails" placeholder="Anything else we should know?"></textarea>
+        </div>
+
+        <div class="field full">
+          <button type="submit">Text My Plan Request</button>
+        </div>
+      </form>
+
+      <p class="note">
+        Your messaging app will open with your request prepared. Review it and press Send to submit it.
+      </p>
+      <p class="note">
+        This feature works best on a mobile phone. Desktop computers may not support opening a text message automatically.
+      </p>
+    </section>
+
+    <section class="content-card" id="customQuote">
+      <h2>Custom Quote Request</h2>
+      <p>
+        For one-time landscaping jobs or other specific work, choose a category
+        and select all services you need.
+      </p>
+
+      <form id="customForm" class="form-grid">
+        <div class="field full">
+          <span class="field-label">What type of service do you need? *</span>
+          <div class="choice-list">
+            <label class="choice">
+              <input type="radio" name="category" value="Lawn Care" checked>
+              Lawn Care
+            </label>
+            <label class="choice">
+              <input type="radio" name="category" value="Landscaping">
+              Landscaping
+            </label>
+          </div>
+        </div>
+
+        <div class="field full">
+          <span class="field-label">Select all services you need *</span>
+          <div id="customServices" class="choice-list"></div>
+        </div>
+
+        <div class="field">
+          <label for="customName">Full Name *</label>
+          <input id="customName" required>
+        </div>
+
+        <div class="field">
+          <label for="customAddress">Property Address *</label>
+          <input id="customAddress" required>
+        </div>
+
+        <div class="field full">
+          <label for="customContact">Other Contact Information (Optional)</label>
+          <input id="customContact" placeholder="Email or other contact information">
+        </div>
+
+        <div class="field full">
+          <label for="customDetails">Additional Details (Optional)</label>
+          <textarea id="customDetails" placeholder="Tell us anything else about the job..."></textarea>
+        </div>
+
+        <div class="field full">
+          <button type="submit">Request a Custom Quote</button>
+        </div>
+      </form>
+
+      <p class="note">
+        Your messaging app will open with your request prepared. Review it and press Send to submit it.
+      </p>
+      <p class="note">
+        This feature works best on a mobile phone. Desktop computers may not support opening a text message automatically.
+      </p>
+    </section>
+
+    <div class="button-row">
+      <a class="button secondary" href="index.html">Home</a>
+      <a class="button secondary" href="services.html">View All Services</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>ONE Lawns &amp; Landscaping · <a href="tel:+14059851213">(405) 985-1213</a></p>
+  </footer>
+
+  <script>
+    const lawnServices = [
+      'Mowing',
+      'Weedeating',
+      'Edging',
+      'Blowing',
+      'Fertilization',
+      'Spot Spraying & Weed Control',
+      'Shrub & Hedge Trimming',
+      'Other Lawn Care'
+    ];
+
+    const landscapeServices = [
+      'Flower Bed Installation',
+      'Planting Plants',
+      'Mulch Installation',
+      'Decorative Rock Installation',
+      'Sod Installation',
+      'Leveling',
+      'Shrub & Hedge Trimming',
+      'Bush & Brush Removal',
+      'Tree Trimming',
+      'Other Landscaping'
+    ];
+
+    const customServices = document.getElementById('customServices');
+
+    function renderServices() {
+      const category = document.querySelector(
+        'input[name="category"]:checked'
+      ).value;
+
+      customServices.innerHTML = '';
+
+      const services = category === 'Lawn Care'
+        ? lawnServices
+        : landscapeServices;
+
+      services.forEach((service, i) => {
+        const label = document.createElement('label');
+        label.className = 'choice';
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.name = 'customService';
+        checkbox.value = service;
+        checkbox.id = 'customService' + i;
+
+        label.append(checkbox, document.createTextNode(service));
+        customServices.appendChild(label);
+      });
+    }
+
+    document.querySelectorAll('input[name="category"]').forEach(input => {
+      input.addEventListener('change', renderServices);
+    });
+
+    renderServices();
+
+    document.querySelectorAll('.plan-button').forEach(button => {
+      button.addEventListener('click', () => {
+        document.getElementById('planName').value = button.dataset.plan;
+        document.getElementById('planRequest').scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+
+    const frequency = document.getElementById('frequency');
+    const intervalWrap = document.getElementById('customIntervalWrap');
+    const intervalInput = document.getElementById('customInterval');
+
+    frequency.addEventListener('change', () => {
+      const custom = frequency.value === 'Custom interval';
+      intervalWrap.hidden = !custom;
+      intervalInput.required = custom;
+
+      if (!custom) {
+        intervalInput.value = '';
+      }
+    });
+
+    document.getElementById('recurringForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const payment = document.querySelector('input[name="payment"]:checked');
+
+      const freq = frequency.value === 'Custom interval'
+        ? intervalInput.value + ' days'
+        : frequency.value;
+
+      const body = [
+        'ONE Lawns & Landscaping - Recurring Lawn Care Request',
+        'Plan: ' + document.getElementById('planName').value,
+        'Name: ' + document.getElementById('customerName').value.trim(),
+        'Property Address: ' + document.getElementById('propertyAddress').value.trim(),
+        'Other Contact Information: ' +
+          (document.getElementById('otherContact').value.trim() || 'Not provided'),
+        'Frequency: ' + freq,
+        'Payment Schedule: ' + (payment ? payment.value : ''),
+        'Additional Information: ' +
+          (document.getElementById('planDetails').value.trim() || 'None')
+      ].join('\n');
+
+      window.location.href =
+        'sms:+14059851213?body=' + encodeURIComponent(body);
+    });
+
+    document.getElementById('customForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const selected = [
+        ...document.querySelectorAll('input[name="customService"]:checked')
+      ].map(input => input.value);
+
+      if (!selected.length) {
+        alert('Please select at least one service.');
+        return;
+      }
+
+      const category = document.querySelector(
+        'input[name="category"]:checked'
+      ).value;
+
+      const body = [
+        'ONE Lawns & Landscaping - Custom Quote Request',
+        'Category: ' + category,
+        'Services: ' + selected.join(', '),
+        'Name: ' + document.getElementById('customName').value.trim(),
+        'Property Address: ' + document.getElementById('customAddress').value.trim(),
+        'Other Contact Information: ' +
+          (document.getElementById('customContact').value.trim() || 'Not provided'),
+        'Additional Details: ' +
+          (document.getElementById('customDetails').value.trim() || 'None')
+      ].join('\n');
+
+      window.location.href =
+        'sms:+14059851213?body=' + encodeURIComponent(body);
+    });
+  </script>
+</body>
+</html>
