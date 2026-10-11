@@ -1,7 +1,17 @@
-/* ========================================
+```css
+/* =========================================
    ONE LAWNS & LANDSCAPING
    Main Website Styles
-======================================== */
+========================================= */
+
+:root {
+    --one-green: #2f8c2f;
+    --one-dark-green: #1f6b2a;
+    --one-light: #f5f5f5;
+    --one-white: #ffffff;
+    --one-black: #111111;
+    --one-border: #dddddd;
+}
 
 * {
     margin: 0;
@@ -9,10 +19,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f5f5;
-    color: #111;
+    background: var(--one-light);
+    color: var(--one-black);
     line-height: 1.6;
 }
 
@@ -20,19 +34,23 @@ img {
     max-width: 100%;
 }
 
-/* ========================================
-   HEADER
-======================================== */
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 
-header {
-    background: #fff;
-    padding: 15px 20px;
+/* =========================================
+   HEADER
+   Centered logo; Terms button on right
+========================================= */
+
+.site-header {
+    position: relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    text-align: center;
+    min-height: 145px;
+    padding: 15px 240px;
+    background: var(--one-white);
 }
 
 .header-logo-link {
@@ -42,139 +60,114 @@ header {
 
 .logo {
     display: block;
-    width: 250px;
+    width: 280px;
     max-width: 100%;
     height: auto;
 }
 
 .terms-link {
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
     display: inline-block;
-    background: #2f8c2f;
-    color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    background: var(--one-green);
+    color: var(--one-white);
     text-decoration: none;
     text-align: center;
-    padding: 10px 20px;
-    border-radius: 6px;
     font-weight: bold;
     transition: background 0.2s ease;
 }
 
 .terms-link:hover {
-    background: #1f6b2a;
+    background: var(--one-dark-green);
 }
 
-/* ========================================
+/* =========================================
    HERO
-======================================== */
+========================================= */
 
 .hero {
     position: relative;
+    width: 100%;
+    background: var(--one-white);
     text-align: center;
-    background: #fff;
 }
 
 .hero-image {
-    width: 100%;
     display: block;
+    width: 100%;
     height: auto;
 }
 
 .hero-overlay {
-    padding: 25px 15px;
-}
-
-.hero-logo {
-    display: none;
+    padding: 30px 20px;
 }
 
 .hero h1 {
-    font-size: 32px;
-    color: #1f6b2a;
     margin-bottom: 15px;
+    color: var(--one-dark-green);
+    font-size: clamp(27px, 3.5vw, 48px);
+    line-height: 1.25;
     font-style: italic;
 }
 
 .hero h2 {
-    font-size: 20px;
     margin-bottom: 20px;
+    font-size: clamp(18px, 2.2vw, 28px);
+    line-height: 1.3;
 }
 
 .phone {
     display: inline-block;
-    background: #2f8c2f;
-    color: #fff;
-    font-size: 32px;
+    margin-bottom: 15px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    background: var(--one-green);
+    color: var(--one-white);
+    font-size: clamp(24px, 2.7vw, 32px);
     font-weight: bold;
     text-decoration: none;
-    padding: 15px 30px;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    transition: background 0.2s ease;
 }
 
 .phone:hover {
-    background: #1f6b2a;
+    background: var(--one-dark-green);
 }
 
 .service-area {
+    color: #555555;
     font-size: 18px;
-    color: #555;
 }
 
-/* ========================================
-   EXISTING THREE-COLUMN CONTENT
-======================================== */
-
-.content {
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-.column {
-    margin-bottom: 40px;
-}
-
-.column h3 {
-    color: #1f6b2a;
-    border-bottom: 3px solid #1f6b2a;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-}
-
-.column ul {
-    padding-left: 25px;
-}
-
-.column li {
-    margin-bottom: 8px;
-}
-
-/* ========================================
+/* =========================================
    HOMEPAGE NAVIGATION
-======================================== */
+========================================= */
 
 .navigation-section {
-    background: #fff;
     padding: 45px 20px 55px;
+    background: var(--one-light);
     text-align: center;
 }
 
 .navigation-section > h2 {
-    color: #1f6b2a;
     margin-bottom: 10px;
+    color: var(--one-dark-green);
     font-size: 28px;
 }
 
 .navigation-intro {
     max-width: 650px;
     margin: 0 auto 30px;
-    color: #444;
+    color: #444444;
 }
 
 .navigation-cards {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
     max-width: 1200px;
     margin: 0 auto;
     text-align: left;
@@ -184,142 +177,143 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background: #f5f5f5;
-    color: #111;
-    text-decoration: none;
-    border: 1px solid #ddd;
-    border-top: 4px solid #2f8c2f;
-    border-radius: 8px;
+    min-height: 190px;
     padding: 25px;
-    min-height: 180px;
+    border: 1px solid var(--one-border);
+    border-top: 5px solid var(--one-green);
+    border-radius: 8px;
+    background: var(--one-white);
+    color: var(--one-black);
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
     transition:
         transform 0.2s ease,
         box-shadow 0.2s ease,
-        background 0.2s ease;
+        border-color 0.2s ease;
 }
 
 .navigation-card:hover {
-    transform: translateY(-3px);
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    border-top-color: var(--one-dark-green);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.10);
 }
 
 .navigation-card h3 {
-    color: #1f6b2a;
-    font-size: 21px;
     margin-bottom: 10px;
+    color: var(--one-dark-green);
+    font-size: 22px;
 }
 
 .navigation-card p {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
+    color: #333333;
 }
 
 .navigation-card span {
-    color: #1f6b2a;
-    font-weight: bold;
     margin-top: auto;
+    color: var(--one-green);
+    font-weight: bold;
 }
 
-/* Visible keyboard focus for accessibility */
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    padding: 30px 20px;
+    background: #222222;
+    color: var(--one-white);
+    text-align: center;
+}
+
+.site-footer p {
+    margin-bottom: 8px;
+}
+
+.site-footer a {
+    color: var(--one-white);
+    text-decoration: underline;
+}
+
+.site-footer a:hover {
+    color: #b8e6b8;
+}
+
+.footer-motto {
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* =========================================
+   KEYBOARD ACCESSIBILITY
+========================================= */
 
 .terms-link:focus-visible,
 .phone:focus-visible,
-.navigation-card:focus-visible {
-    outline: 3px solid #1f6b2a;
+.navigation-card:focus-visible,
+.site-footer a:focus-visible {
+    outline: 3px solid var(--one-dark-green);
     outline-offset: 4px;
 }
 
-/* ========================================
-   DESKTOP LAYOUT
-======================================== */
+/* =========================================
+   TABLETS AND SMALLER DESKTOPS
+========================================= */
 
-@media (min-width: 900px) {
+@media (max-width: 900px) {
 
-    header {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 25px;
-        padding: 15px 25px;
+    .site-header {
+        min-height: 125px;
+        padding: 15px 200px 15px 15px;
     }
 
     .logo {
-        width: 280px;
-    }
-
-    .hero {
-        position: relative;
-    }
-
-    .hero-image {
-        width: 100%;
-        height: auto;
-    }
-
-    .hero-overlay {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 25px;
-        color: #fff;
-        background: rgba(0, 0, 0, 0.25);
-    }
-
-    .hero h1 {
-        color: #fff;
-        text-shadow: 2px 2px 8px #000;
-        font-size: clamp(32px, 4vw, 48px);
-    }
-
-    .hero h2 {
-        text-shadow: 2px 2px 8px #000;
-        font-size: 28px;
-    }
-
-    .service-area {
-        color: #fff;
-        text-shadow: 2px 2px 8px #000;
-    }
-
-    .content {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 50px;
-    }
-
-    .column {
-        margin-bottom: 0;
-    }
-
-    .navigation-cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* ========================================
-   SMALL PHONES
-======================================== */
-
-@media (max-width: 480px) {
-
-    header {
-        padding: 12px 15px;
-    }
-
-    .logo {
-        width: 230px;
+        width: 250px;
     }
 
     .terms-link {
+        right: 15px;
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .navigation-cards {
+        gap: 16px;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .site-header {
+        min-height: auto;
+        padding: 15px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .logo {
+        width: 240px;
+    }
+
+    .terms-link {
+        position: static;
+        transform: none;
         max-width: 100%;
-        padding: 10px 16px;
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+
+    .hero-overlay {
+        padding: 25px 15px;
     }
 
     .hero h1 {
-        font-size: 26px;
+        font-size: 27px;
     }
 
     .hero h2 {
@@ -327,16 +321,12 @@ header {
     }
 
     .phone {
-        font-size: 25px;
         padding: 12px 22px;
+        font-size: 25px;
     }
 
     .service-area {
         font-size: 15px;
-    }
-
-    .content {
-        padding: 30px 20px;
     }
 
     .navigation-section {
@@ -347,8 +337,53 @@ header {
         font-size: 24px;
     }
 
-    .navigation-card {
-        padding: 20px;
+    .navigation-intro {
+        margin-bottom: 24px;
     }
+
+    .navigation-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .navigation-card {
+        min-height: 160px;
+        padding: 22px;
+    }
+
+    .navigation-card h3 {
+        font-size: 20px;
+    }
+
+    .site-footer {
+        padding: 25px 15px;
+        font-size: 14px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+
+    .logo {
+        width: 210px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .phone {
+        font-size: 22px;
+        padding: 10px 16px;
+    }
+
+    .navigation-card {
+        padding: 18px;
+    }
+
 }
 ```
