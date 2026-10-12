@@ -124,10 +124,6 @@
             line-height: 1.6;
         }
 
-        .treatment-info p {
-            margin: 0 0 5px;
-        }
-
         .treatment-link {
             display: inline-block;
             color: #245f24;
@@ -435,7 +431,6 @@
     </section>
 
     <div class="treatment-info">
-        <p>Want to learn more about fertilization and spot spraying?</p>
         <a class="treatment-link" href="complete-lawn-care.html">
             About Fertilization &amp; Spot Spraying
         </a>
@@ -666,9 +661,9 @@
     function closeRecurringForm() {
         recurringFormPanel.classList.remove("active");
 
-        planCards.forEach(card => {
-            card.setAttribute("aria-expanded", "false");
-        });
+        planCards.forEach(card =>
+            card.setAttribute("aria-expanded", "false")
+        );
     }
 
     function closeCustomForm() {
@@ -688,9 +683,9 @@
             recurringFormPanel.classList.add("active");
             customFormPanel.classList.remove("active");
 
-            planCards.forEach(item => {
-                item.setAttribute("aria-expanded", "false");
-            });
+            planCards.forEach(item =>
+                item.setAttribute("aria-expanded", "false")
+            );
 
             card.setAttribute("aria-expanded", "true");
 
@@ -799,14 +794,10 @@
             );
 
             lawnOptions.querySelectorAll('input[type="checkbox"]')
-                .forEach(input => {
-                    input.checked = false;
-                });
+                .forEach(input => input.checked = false);
 
             landscapingOptions.querySelectorAll('input[type="checkbox"]')
-                .forEach(input => {
-                    input.checked = false;
-                });
+                .forEach(input => input.checked = false);
         });
 
     document.getElementById("custom-request-form")
