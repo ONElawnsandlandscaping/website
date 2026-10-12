@@ -4,12 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Complete Lawn Care Information | ONE Lawns & Landscaping</title>
+<title>Complete Lawn Care | ONE Lawns & Landscaping</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 :root {
   --green: #286b3b;
@@ -22,11 +20,16 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  min-height: 100%;
+  background: var(--dark-green);
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
   background: var(--background);
   color: var(--text);
@@ -34,36 +37,33 @@ body {
 }
 
 header {
+  flex: 0 0 auto;
   background: #fff;
   padding: 10px 15px;
   text-align: center;
   border-bottom: 1px solid var(--border);
 }
 
-header a {
-  display: inline-block;
-}
+header a { display: inline-block; }
 
 .logo {
   display: block;
-  width: 170px;
-  height: 85px;
-  max-width: 70vw;
-  max-height: 85px;
+  width: 260px;
+  height: 120px;
+  max-width: 80vw;
   object-fit: contain;
   margin: 0 auto;
 }
 
 main {
+  flex: 1 0 auto;
   width: calc(100% - 32px);
   max-width: 1000px;
   margin: 0 auto;
-  padding: 35px 0 45px;
+  padding: 32px 0 45px;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   color: var(--dark-green);
   line-height: 1.3;
 }
@@ -79,16 +79,11 @@ h2 {
   margin: 0 0 15px;
 }
 
-h3 {
-  font-size: 1.1rem;
-  margin: 0 0 7px;
-}
-
 .intro {
-  max-width: 760px;
-  margin: 0 auto 32px;
   text-align: center;
+  max-width: 760px;
   color: var(--muted);
+  margin: 0 auto 30px;
 }
 
 .info-card {
@@ -97,50 +92,44 @@ h3 {
   border-top: 5px solid var(--green);
   border-radius: 10px;
   padding: clamp(20px, 3vw, 30px);
-  margin-bottom: 22px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+  margin-bottom: 20px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.04);
 }
 
-.info-card p {
-  margin: 0 0 14px;
-}
-
-.info-card p:last-child {
-  margin-bottom: 0;
-}
-
-.season-card {
-  background: var(--light-green);
-  border: 1px solid #e0e9dc;
-  border-radius: 7px;
-  padding: 16px 18px;
-  margin-top: 14px;
-}
-
-.season-card p {
-  margin: 0;
-}
-
-.notice {
-  background: var(--light-green);
-  border-left: 4px solid var(--green);
-  border-radius: 5px;
-  padding: 15px 17px;
-  margin-top: 18px;
-}
-
-.notice p {
-  margin: 0;
-}
+.info-card p { margin: 0 0 13px; }
+.info-card p:last-child { margin-bottom: 0; }
 
 .info-card ul {
-  padding-left: 23px;
+  padding-left: 24px;
   margin: 10px 0 0;
 }
 
-.info-card li {
-  margin-bottom: 8px;
+.info-card li { margin-bottom: 8px; }
+
+.season {
+  background: var(--light-green);
+  border: 1px solid #e0e9dc;
+  border-radius: 7px;
+  padding: 15px 17px;
+  margin-top: 14px;
 }
+
+.season h3 {
+  font-size: 1.1rem;
+  margin: 0 0 6px;
+}
+
+.season p { margin: 0; }
+
+.notice {
+  border-left: 4px solid var(--green);
+  background: var(--light-green);
+  border-radius: 5px;
+  padding: 14px 16px;
+  margin-top: 16px;
+}
+
+.notice p { margin: 0; }
 
 .button-row {
   display: flex;
@@ -150,124 +139,102 @@ h3 {
 
 .back-button {
   display: inline-block;
-  padding: 12px 23px;
-  border-radius: 6px;
+  padding: 12px 22px;
   background: var(--green);
   color: #fff;
+  border-radius: 6px;
   text-decoration: none;
-  text-align: center;
   font-weight: bold;
-  transition: background 0.15s;
 }
 
-.back-button:hover {
-  background: var(--dark-green);
-}
+.back-button:hover { background: var(--dark-green); }
 
 footer {
+  flex: 0 0 auto;
+  width: 100%;
+  margin-top: auto;
+  padding: 24px 15px;
   background: var(--dark-green);
   color: #fff;
   text-align: center;
-  padding: 24px 15px;
 }
 
-footer p {
-  margin: 5px;
-}
-
-footer a {
-  color: #fff;
-}
+footer p { margin: 5px; }
+footer a { color: #fff; }
 
 @media (max-width: 550px) {
   main {
     width: calc(100% - 22px);
     padding-top: 25px;
   }
-
-  .info-card {
-    padding: 19px;
-  }
-
-  .season-card {
-    padding: 14px;
-  }
+  .info-card { padding: 19px; }
 }
 </style>
 </head>
 
 <body>
-
 <header>
   <a href="index.html" aria-label="ONE Lawns & Landscaping home">
-    <img
-      class="logo"
-      src="logo.png"
-      alt="ONE Lawns & Landscaping"
-    >
+    <img class="logo" src="logo.png" alt="ONE Lawns & Landscaping">
   </a>
 </header>
 
 <main>
   <h1>Complete Lawn Care</h1>
-
   <p class="intro">
     Learn more about our fertilization and spot-spraying services,
     seasonal lawn care, and treatment guidelines.
   </p>
 
-  <!-- FERTILIZATION CARD -->
   <section class="info-card">
     <h2>Fertilization</h2>
 
     <p>
       Fertilization provides nutrients that can support healthy lawn growth,
       color, and overall lawn condition. The timing and amount needed depend
-      on the grass type, current lawn conditions, seasonal needs, and the
-      fertilizer being used.
+      on grass type, lawn conditions, seasonal needs, and the product used.
     </p>
 
     <p>
       Bermuda grass grows differently throughout the year, so its
       fertilization needs change with the seasons. Applications should
-      be based on active growth and lawn conditions rather than using
-      the same schedule year-round.
+      match active growth and lawn conditions rather than follow the same
+      schedule year-round.
     </p>
 
-    <div class="season-card">
+    <div class="season">
       <h3>Spring — After Green-Up</h3>
       <p>
         Once Bermuda grass has greened up and is actively growing,
         fertilization may help support healthy new growth. Timing depends
-        on temperatures, lawn conditions, and the product's directions.
+        on temperatures, lawn conditions, and product directions.
       </p>
     </div>
 
-    <div class="season-card">
+    <div class="season">
       <h3>Summer — Active Growth</h3>
       <p>
-        Bermuda grass typically grows actively during warm weather.
-        Fertilization may be appropriate when the lawn needs additional
-        nutrients. Weather, watering, and lawn condition should be
-        considered before applying fertilizer.
+        During active growth, Bermuda grass may benefit from additional
+        nutrients when needed. Applications should account for the lawn's
+        condition, watering, weather, and the product's directions.
       </p>
     </div>
 
-    <div class="season-card">
-      <h3>Fall — Growth Slows</h3>
+    <div class="season">
+      <h3>Fall — Slowing Growth</h3>
       <p>
-        As temperatures cool, Bermuda grass begins slowing its growth.
-        Fertilization needs change during this period, and late-season
-        applications should be considered carefully.
+        As temperatures cool and growth slows, fertilization needs change.
+        Late-season applications should be considered carefully rather
+        than automatically continuing a summer schedule.
       </p>
     </div>
 
-    <div class="season-card">
+    <div class="season">
       <h3>Winter — Dormant Grass</h3>
       <p>
         Dormant Bermuda grass generally does not need routine nitrogen
-        fertilization. Lawn needs can be reassessed as warmer weather
-        approaches and the grass prepares to green up again.
+        fertilization. The lawn's needs can be reassessed as warmer weather
+        approaches and spring green-up begins.
       </p>
     </div>
 
@@ -275,20 +242,19 @@ footer a {
       <p>
         <strong>Important:</strong> These are general seasonal guidelines,
         not a guaranteed application schedule. Fertilizer selection,
-        timing, and amounts depend on lawn conditions, weather, soil needs,
+        timing, and amounts depend on lawn needs, weather, soil conditions,
         and product label directions.
       </p>
     </div>
   </section>
 
-  <!-- SPOT SPRAYING CARD -->
   <section class="info-card">
     <h2>Spot Spraying &amp; Weed Control</h2>
 
     <p>
       Spot spraying targets weeds in specific areas around the property.
-      Depending on the conditions and the product being used, these areas
-      may include flower beds, sidewalk cracks, driveway cracks, and other
+      Depending on the conditions and product being used, these areas may
+      include flower beds, sidewalk cracks, driveway cracks, and other
       appropriate localized spots where weeds are growing.
     </p>
 
@@ -307,27 +273,25 @@ footer a {
     </div>
   </section>
 
-  <!-- TREATMENT GUIDELINES CARD -->
   <section class="info-card">
     <h2>Treatment Guidelines</h2>
 
     <p>
       Every lawn and property is different. Treatment decisions depend
-      on the weeds present, the surrounding grass and landscape, weather,
-      and the intended use of the product.
+      on the weeds present, grass and landscape conditions, weather,
+      and the treatment product's intended use.
     </p>
 
     <ul>
       <li>Products are used according to their label directions.</li>
-      <li>Weather and site conditions can affect application timing.</li>
-      <li>Spot spraying is performed where needed, not automatically everywhere.</li>
+      <li>Application timing depends on weather and site conditions.</li>
+      <li>Spot spraying is performed in appropriate areas when needed.</li>
       <li>Results can vary based on weed type, lawn condition, and other factors.</li>
     </ul>
 
-    <p style="margin-top: 16px;">
+    <p style="margin-top:15px">
       If you have questions about treatment for a particular area of your
-      property, you can include those details when requesting your lawn
-      care plan.
+      property, you can include those details in your quote request.
     </p>
   </section>
 
@@ -342,6 +306,5 @@ footer a {
   <p><a href="tel:+14059851213">(405) 985-1213</a></p>
   <p>Yukon • Mustang • El Reno • Oklahoma City</p>
 </footer>
-
 </body>
 </html>
