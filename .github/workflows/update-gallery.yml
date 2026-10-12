@@ -37,7 +37,6 @@ jobs:
           }
 
           video_extensions = {".mp4"}
-
           media = []
 
           for path in sorted(
