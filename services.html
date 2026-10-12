@@ -25,19 +25,24 @@
             min-height: 100vh;
             min-height: 100dvh;
             margin: 0;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
             font-family: Arial, Helvetica, sans-serif;
             color: #222;
             background: #f5f7f3;
         }
 
-        .services-page {
+        body > header.site-header {
+            grid-row: 1;
+            width: 100%;
+        }
+
+        body > main.services-page {
+            grid-row: 2;
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px 60px;
-            flex: 1 0 auto;
         }
 
         .services-heading {
@@ -88,8 +93,6 @@
             font-weight: bold;
             line-height: 1.4;
         }
-
-        /* Request an unlisted service */
 
         .request-section {
             margin-top: 45px;
@@ -208,7 +211,6 @@
             background: #2f8c2f;
             color: #fff;
             font-weight: bold;
-            text-align: center;
             text-decoration: none;
         }
 
@@ -216,12 +218,13 @@
             background: #1f6b2a;
         }
 
-        /* Footer stays at the bottom on short pages. */
-
-        footer {
-            flex-shrink: 0;
+        /* Footer layout */
+        body > footer {
+            grid-row: 3;
+            position: static !important;
+            align-self: end;
             width: 100%;
-            margin-top: auto;
+            margin: 0 !important;
             padding: 18px 15px;
             background: #245f24;
             color: #fff;
@@ -229,11 +232,11 @@
             line-height: 1.6;
         }
 
-        footer p {
+        body > footer p {
             margin: 3px 0;
         }
 
-        footer a {
+        body > footer a {
             color: #fff;
         }
 
@@ -244,7 +247,7 @@
         }
 
         @media (max-width: 600px) {
-            .services-page {
+            body > main.services-page {
                 padding: 28px 15px 40px;
             }
 
@@ -325,6 +328,7 @@
             <div class="service-item">Mulch Installation</div>
             <div class="service-item">Decorative Rock Installation</div>
             <div class="service-item">Sod Installation</div>
+            <div class="service-item">Leveling</div>
             <div class="service-item">Shrub &amp; Hedge Trimming</div>
             <div class="service-item">Bush &amp; Brush Removal</div>
             <div class="service-item">Tree Trimming</div>
