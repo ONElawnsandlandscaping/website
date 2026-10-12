@@ -117,14 +117,19 @@
             font-weight: bold;
         }
 
-        /* Link to the lawn-care information page */
+        /* Fertilization information link */
         .treatment-info {
             margin: 20px auto 30px;
             text-align: center;
             line-height: 1.6;
         }
 
+        .treatment-info p {
+            margin: 0 0 5px;
+        }
+
         .treatment-link {
+            display: inline-block;
             color: #245f24;
             font-weight: bold;
             text-decoration: underline;
@@ -429,13 +434,13 @@
         </button>
     </section>
 
-    <!-- Restored link to the lawn-care information page -->
-    <p class="treatment-info">
-        Want to learn more about fertilization and spot spraying?
+    <!-- This link appears directly below the recurring plan cards. -->
+    <div class="treatment-info">
+        <p>Want to learn more about fertilization and spot spraying?</p>
         <a class="treatment-link" href="complete-lawn-care.html">
             Learn About Fertilization &amp; Spot Spraying
         </a>
-    </p>
+    </div>
 
     <section class="form-panel" id="recurring-form" aria-live="polite">
         <h2>Recurring Lawn Care Request</h2>
@@ -505,7 +510,6 @@
                                    value="On the date each service is provided" required>
                             On the date each service is provided
                         </label>
-
                         <label>
                             <input type="radio" name="paymentSchedule"
                                    value="At the start of every month" required>
@@ -532,10 +536,9 @@
                 Your messaging app will open with your request prepared.
                 Review it and press Send to submit it.
             </p>
-
             <p class="form-note">
-                This feature works best on a mobile phone. Desktop computers may not
-                support opening a text message automatically.
+                This feature works best on a mobile phone. Desktop computers may
+                not support opening a text message automatically.
             </p>
         </form>
     </section>
@@ -633,10 +636,9 @@
                 Your messaging app will open with your request prepared.
                 Review it and press Send to submit it.
             </p>
-
             <p class="form-note">
-                This feature works best on a mobile phone. Desktop computers may not
-                support opening a text message automatically.
+                This feature works best on a mobile phone. Desktop computers may
+                not support opening a text message automatically.
             </p>
         </form>
     </section>
@@ -712,7 +714,6 @@
             closeCustomForm();
         } else {
             customFormPanel.classList.add("active");
-
             document.getElementById("custom-card")
                 .setAttribute("aria-expanded", "true");
 
@@ -771,10 +772,8 @@
             message += "Property Address: " + data.get("address") + "\n";
             message += "Other Contact Information: " +
                 (data.get("contact") || "Not provided") + "\n";
-
             message += "Service Frequency: " +
                 (frequency === "Custom interval" ? interval : frequency) + "\n";
-
             message += "Preferred Payment Schedule: " + payment + "\n";
             message += "Additional Information: " +
                 (data.get("details") || "None provided");
@@ -796,14 +795,10 @@
             );
 
             lawnOptions.querySelectorAll('input[type="checkbox"]')
-                .forEach(input => {
-                    input.checked = false;
-                });
+                .forEach(input => input.checked = false);
 
             landscapingOptions.querySelectorAll('input[type="checkbox"]')
-                .forEach(input => {
-                    input.checked = false;
-                });
+                .forEach(input => input.checked = false);
         });
 
     document.getElementById("custom-request-form")
