@@ -15,9 +15,41 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        .gallery-page {
-            max-width: 1400px;
+        html {
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Center the logo and remove Terms of Service */
+        .site-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 100%;
+            box-sizing: border-box;
+        }
+
+        .header-logo-link {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .site-header .terms-link {
+            display: none !important;
+        }
+
+        /* Gallery layout */
+        .gallery-page {
+            flex: 1;
+            width: 100%;
+            max-width: 1400px;
+            box-sizing: border-box;
             margin: 0 auto;
             padding: 35px 20px 60px;
         }
@@ -102,6 +134,7 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
+        /* Back to Home button - no arrow */
         .gallery-back {
             display: block;
             width: fit-content;
@@ -119,7 +152,6 @@
         }
 
         /* Enlarged photo and video viewer */
-
         .media-viewer {
             display: none;
             position: fixed;
@@ -143,7 +175,6 @@
             object-fit: contain;
         }
 
-        /* Critical fix: never display inactive media */
         .viewer-media[hidden] {
             display: none !important;
         }
@@ -164,6 +195,29 @@
 
         body.viewer-open {
             overflow: hidden;
+        }
+
+        /* Footer */
+        footer {
+            flex-shrink: 0;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: auto;
+            padding: 18px 15px;
+            background: #245f24;
+            color: #fff;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        footer p {
+            margin: 3px 0;
+        }
+
+        footer a,
+        footer a:visited {
+            color: #fff;
+            text-decoration: underline;
         }
 
         @media (max-width: 900px) {
@@ -210,7 +264,7 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- CENTERED HEADER -->
 
     <header class="site-header">
         <a href="index.html" class="header-logo-link">
@@ -219,10 +273,6 @@
                 alt="ONE Lawns &amp; Landscaping"
                 class="logo"
             >
-        </a>
-
-        <a href="terms.html" class="terms-link">
-            Click for Terms of Service
         </a>
     </header>
 
@@ -251,13 +301,13 @@
         <div class="gallery-grid" id="gallery-grid"></div>
 
         <a href="index.html" class="gallery-back">
-            &larr; Back to Home
+            Back to Home
         </a>
 
     </main>
 
 
-    <!-- MEDIA VIEWER -->
+    <!-- PHOTO AND VIDEO VIEWER -->
 
     <div
         class="media-viewer"
@@ -294,6 +344,16 @@
         ></video>
 
     </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <p><strong>ONE Lawns &amp; Landscaping</strong></p>
+        <p>Anything Worth Doing, Is Worth Doing Right.</p>
+        <p>Yukon • Mustang • El Reno • Oklahoma City</p>
+        <p><a href="tel:+14059851213">(405) 985-1213</a></p>
+    </footer>
 
 
     <!-- GALLERY SCRIPT -->
@@ -417,10 +477,6 @@
 
                 if (galleryGrid.children.length === 0) {
                     showError();
-                } else {
-                    galleryStatus.textContent =
-                        galleryGrid.children.length +
-                        " photos and videos in our gallery.";
                 }
             }, { once: true });
 
