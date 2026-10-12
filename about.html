@@ -1,1 +1,268 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us | ONE Lawns &amp; Landscaping</title>
+
+    <link rel="stylesheet" href="style.css?v=3">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            min-height: 100%;
+            background: #245f24;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #f5f7f3;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 35px 24px 50px;
+            flex: 1 0 auto;
+        }
+
+        .about-title {
+            color: #245f24;
+            text-align: center;
+            font-size: 34px;
+            margin: 0 0 35px;
+        }
+
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 45px;
+            margin-bottom: 55px;
+        }
+
+        .about-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-text h2 {
+            color: #245f24;
+            font-size: 29px;
+            margin: 0 0 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2f8c2f;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin: 0 0 16px;
+        }
+
+        .about-photo {
+            width: 100%;
+            margin: 0;
+            text-align: center;
+        }
+
+        .about-photo img {
+            display: block;
+            width: 100%;
+            height: 370px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+        }
+
+        .photo-caption {
+            margin: 9px 0 0;
+            color: #555;
+            font-size: 12px;
+            font-style: italic;
+        }
+
+        .page-back {
+            display: block;
+            width: fit-content;
+            margin: 40px auto 0;
+            padding: 12px 22px;
+            border-radius: 6px;
+            background: #2f8c2f;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .page-back:hover {
+            background: #1f6b2a;
+        }
+
+        footer {
+            flex-shrink: 0;
+            width: 100%;
+            margin-top: auto;
+            padding: 18px 15px;
+            background: #245f24;
+            color: #fff;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        footer p {
+            margin: 3px 0;
+        }
+
+        footer a,
+        footer a:visited {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 750px) {
+            main {
+                padding: 25px 18px 35px;
+            }
+
+            .about-title {
+                font-size: 29px;
+                margin-bottom: 28px;
+            }
+
+            .about-section {
+                grid-template-columns: 1fr;
+                gap: 22px;
+                margin-bottom: 45px;
+            }
+
+            .about-text h2 {
+                font-size: 25px;
+            }
+
+            .about-photo img {
+                height: auto;
+                max-height: 420px;
+                aspect-ratio: 4 / 3;
+            }
+
+            .about-section .about-photo {
+                grid-row: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a href="index.html" class="header-logo-link">
+            <img src="logo.png"
+                 alt="ONE Lawns &amp; Landscaping"
+                 class="logo">
+        </a>
+    </header>
+
+    <main>
+
+        <h1 class="about-title">About Us</h1>
+
+        <!-- WHO WE ARE: TEXT LEFT, JAKE PHOTO RIGHT -->
+        <section class="about-section">
+
+            <div class="about-text">
+                <h2>Who We Are</h2>
+
+                <p>
+                    We're Jake and Ayden, the owners and operators of ONE
+                    Lawns &amp; Landscaping. We started small right here in
+                    our own neighborhood in Yukon. We've been working to
+                    grow our business and build a reputation for quality
+                    work and reliable service.
+                </p>
+
+                <p>
+                    We provide a variety of lawn care and landscaping
+                    services, from routine mowing and lawn maintenance
+                    to flower beds, mulch, decorative rock, and other
+                    outdoor projects. No matter the size of the job,
+                    we want every customer to receive dependable service
+                    and work they can be satisfied with.
+                </p>
+            </div>
+
+            <figure class="about-photo">
+                <img src="Jake.jpg"
+                     alt="Jake, co-owner of ONE Lawns &amp; Landscaping">
+
+                <figcaption class="photo-caption">
+                    * Jake, co-owner and operator
+                </figcaption>
+            </figure>
+
+        </section>
+
+        <!-- BUSINESS STANDARD: AYDEN PHOTO LEFT, TEXT RIGHT -->
+        <section class="about-section">
+
+            <figure class="about-photo">
+                <img src="Ayden.jpg"
+                     alt="Ayden, co-owner of ONE Lawns &amp; Landscaping">
+
+                <figcaption class="photo-caption">
+                    * Ayden, co-owner and operator
+                </figcaption>
+            </figure>
+
+            <div class="about-text">
+                <h2>Our Business Standard</h2>
+
+                <p>
+                    Our standard is simple:
+                    <strong>Anything Worth Doing, Is Worth Doing Right.</strong>
+                    We believe quality comes down to the details, whether
+                    we're mowing a yard or completing a larger landscaping
+                    project. We work to meet our customers' expectations,
+                    take care of their properties, and do the job right.
+                </p>
+
+                <p>
+                    We also believe communication and reliability are
+                    important parts of running a business. We want our
+                    customers to know what to expect and feel confident
+                    in the work we're doing. As we continue to grow,
+                    we're always looking for ways to improve our services
+                    and maintain the standards our business was built on.
+                </p>
+            </div>
+
+        </section>
+
+        <a href="index.html" class="page-back">Back to Home</a>
+
+    </main>
+
+    <footer>
+        <p><strong>ONE Lawns &amp; Landscaping</strong></p>
+        <p>Anything Worth Doing, Is Worth Doing Right.</p>
+        <p>Yukon • Mustang • El Reno • Oklahoma City</p>
+        <p>
+            <a href="tel:+14059851213">(405) 985-1213</a>
+        </p>
+    </footer>
+
+</body>
+</html>
+
