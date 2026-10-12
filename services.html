@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,12 +83,6 @@
             padding: 22px 20px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
             border-top: 4px solid #245f24;
-        }
-
-        .service-card h3 {
-            color: #245f24;
-            margin: 0 0 14px;
-            font-size: 1.2rem;
         }
 
         .service-card ul {
@@ -191,6 +186,12 @@
             text-decoration: underline;
         }
 
+        .page-back::before,
+        .page-back::after {
+            content: none !important;
+            display: none !important;
+        }
+
         body > footer {
             grid-row: 3;
             position: static !important;
@@ -266,9 +267,7 @@
             <h2>Lawn Care</h2>
 
             <div class="service-grid">
-
                 <div class="service-card">
-                    <h3>Lawn Maintenance</h3>
                     <ul>
                         <li>Mowing</li>
                         <li>Weedeating</li>
@@ -278,7 +277,6 @@
                 </div>
 
                 <div class="service-card">
-                    <h3>Fertilization & Weed Control</h3>
                     <ul>
                         <li>Fertilization</li>
                         <li>Spot Spraying & Weed Control</li>
@@ -286,12 +284,10 @@
                 </div>
 
                 <div class="service-card">
-                    <h3>Shrub & Hedge Care</h3>
                     <ul>
                         <li>Shrub & Hedge Trimming</li>
                     </ul>
                 </div>
-
             </div>
         </section>
 
@@ -299,46 +295,29 @@
             <h2>Landscaping</h2>
 
             <div class="service-grid">
-
                 <div class="service-card">
-                    <h3>Flower Beds</h3>
                     <ul>
                         <li>Flower Bed Installation</li>
                         <li>Planting Plants</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <h3>Mulch & Decorative Rock</h3>
-                    <ul>
                         <li>Mulch Installation</li>
-                        <li>Decorative Rock Installation</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
-                    <h3>Sod & Leveling</h3>
                     <ul>
+                        <li>Decorative Rock Installation</li>
                         <li>Sod Installation</li>
                         <li>Leveling</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
-                    <h3>Shrubs & Hedges</h3>
                     <ul>
                         <li>Shrub & Hedge Trimming</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <h3>Brush & Tree Work</h3>
-                    <ul>
                         <li>Bush & Brush Removal</li>
                         <li>Tree Trimming</li>
                     </ul>
                 </div>
-
             </div>
         </section>
 
@@ -419,9 +398,7 @@
         </section>
 
         <div class="page-navigation">
-            <a href="index.html" class="page-back">
-                Back to Home
-            </a>
+            <a href="index.html" class="page-back">Back to Home</a>
         </div>
 
     </main>
@@ -474,10 +451,8 @@
                     message += "\nAdditional Details: " + details;
                 }
 
-                const smsLink =
+                window.location.href =
                     "sms:+14059851213?body=" + encodeURIComponent(message);
-
-                window.location.href = smsLink;
             }
         );
     </script>
