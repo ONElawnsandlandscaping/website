@@ -117,6 +117,24 @@
             font-weight: bold;
         }
 
+        /* Link to the lawn-care information page */
+        .treatment-info {
+            margin: 20px auto 30px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .treatment-link {
+            color: #245f24;
+            font-weight: bold;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .treatment-link:hover {
+            color: #2f8c2f;
+        }
+
         .form-panel {
             display: none;
             margin-top: 28px;
@@ -373,6 +391,7 @@
 
 <main>
     <h1 class="page-heading">Get a Quote</h1>
+
     <p class="page-intro">
         Choose a recurring lawn care plan or request a custom quote for lawn care
         and landscaping. Every property is different, so we provide quotes based
@@ -382,21 +401,24 @@
     <h2 class="section-heading">Recurring Lawn Care Plans</h2>
 
     <section class="plan-grid" aria-label="Recurring lawn care plans">
-        <button class="plan-card" type="button" data-plan="Essential Lawn Care"
+        <button class="plan-card" type="button"
+                data-plan="Essential Lawn Care"
                 aria-controls="recurring-form" aria-expanded="false">
             <h3>Essential Lawn Care</h3>
             <p>Mowing, weedeating, edging, and blowing.</p>
             <span class="select-hint">Request This Plan</span>
         </button>
 
-        <button class="plan-card" type="button" data-plan="Enhanced Lawn Care"
+        <button class="plan-card" type="button"
+                data-plan="Enhanced Lawn Care"
                 aria-controls="recurring-form" aria-expanded="false">
             <h3>Enhanced Lawn Care</h3>
             <p>Everything in Essential Lawn Care, plus shrub and hedge trimming.</p>
             <span class="select-hint">Request This Plan</span>
         </button>
 
-        <button class="plan-card" type="button" data-plan="Complete Lawn Care"
+        <button class="plan-card" type="button"
+                data-plan="Complete Lawn Care"
                 aria-controls="recurring-form" aria-expanded="false">
             <h3>Complete Lawn Care</h3>
             <p>
@@ -407,8 +429,17 @@
         </button>
     </section>
 
+    <!-- Restored link to the lawn-care information page -->
+    <p class="treatment-info">
+        Want to learn more about fertilization and spot spraying?
+        <a class="treatment-link" href="complete-lawn-care.html">
+            Learn About Fertilization &amp; Spot Spraying
+        </a>
+    </p>
+
     <section class="form-panel" id="recurring-form" aria-live="polite">
         <h2>Recurring Lawn Care Request</h2>
+
         <p class="form-description">
             Fill out the information below to request your selected plan.
             We will review your request and follow up about your quote.
@@ -474,6 +505,7 @@
                                    value="On the date each service is provided" required>
                             On the date each service is provided
                         </label>
+
                         <label>
                             <input type="radio" name="paymentSchedule"
                                    value="At the start of every month" required>
@@ -497,10 +529,13 @@
             </div>
 
             <p class="form-note">
-                Your messaging app will open with your request prepared. Review it and press Send to submit it.
+                Your messaging app will open with your request prepared.
+                Review it and press Send to submit it.
             </p>
+
             <p class="form-note">
-                This feature works best on a mobile phone. Desktop computers may not support opening a text message automatically.
+                This feature works best on a mobile phone. Desktop computers may not
+                support opening a text message automatically.
             </p>
         </form>
     </section>
@@ -509,13 +544,14 @@
 
     <button class="custom-card" id="custom-card" type="button"
             aria-controls="custom-form" aria-expanded="false">
-        <h3>Custom Lawn Care & Landscaping</h3>
+        <h3>Custom Lawn Care &amp; Landscaping</h3>
         <p>Choose the services you need and tell us about your project.</p>
         <span class="select-hint">Request a Custom Quote</span>
     </button>
 
     <section class="form-panel" id="custom-form" aria-live="polite">
         <h2>Custom Quote Request</h2>
+
         <p class="form-description">
             Select a service category, choose all services you are interested in,
             and provide your property information.
@@ -539,8 +575,8 @@
                     <label class="checkbox-option"><input type="checkbox" name="services" value="Edging"> Edging</label>
                     <label class="checkbox-option"><input type="checkbox" name="services" value="Blowing"> Blowing</label>
                     <label class="checkbox-option"><input type="checkbox" name="services" value="Fertilization"> Fertilization</label>
-                    <label class="checkbox-option"><input type="checkbox" name="services" value="Spot Spraying & Weed Control"> Spot Spraying & Weed Control</label>
-                    <label class="checkbox-option"><input type="checkbox" name="services" value="Shrub & Hedge Trimming"> Shrub & Hedge Trimming</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Spot Spraying & Weed Control"> Spot Spraying &amp; Weed Control</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Shrub & Hedge Trimming"> Shrub &amp; Hedge Trimming</label>
                     <label class="checkbox-option"><input type="checkbox" name="services" value="Other Lawn Care"> Other Lawn Care</label>
                 </div>
             </fieldset>
@@ -549,13 +585,12 @@
                 <legend>Landscaping Services</legend>
                 <div class="checkbox-grid">
                     <label class="checkbox-option"><input type="checkbox" name="services" value="Flower Bed Installation"> Flower Bed Installation</label>
-                    <label class="checkbox-option"><input type="checkbox" name="services" value="Planting Plants"> Planting Plants</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Plant Installation"> Plant Installation</label>
                     <label class="checkbox-option"><input type="checkbox" name="services" value="Mulch Installation"> Mulch Installation</label>
                     <label class="checkbox-option"><input type="checkbox" name="services" value="Decorative Rock Installation"> Decorative Rock Installation</label>
                     <label class="checkbox-option"><input type="checkbox" name="services" value="Sod Installation"> Sod Installation</label>
                     <label class="checkbox-option"><input type="checkbox" name="services" value="Leveling"> Leveling</label>
-                    <label class="checkbox-option"><input type="checkbox" name="services" value="Shrub & Hedge Trimming"> Shrub & Hedge Trimming</label>
-                    <label class="checkbox-option"><input type="checkbox" name="services" value="Bush & Brush Removal"> Bush & Brush Removal</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Bush & Brush Removal"> Bush &amp; Brush Removal</label>
                     <label class="checkbox-option"><input type="checkbox" name="services" value="Tree Trimming"> Tree Trimming</label>
                     <label class="checkbox-option"><input type="checkbox" name="services" value="Other Landscaping"> Other Landscaping</label>
                 </div>
@@ -595,10 +630,13 @@
             </div>
 
             <p class="form-note">
-                Your messaging app will open with your request prepared. Review it and press Send to submit it.
+                Your messaging app will open with your request prepared.
+                Review it and press Send to submit it.
             </p>
+
             <p class="form-note">
-                This feature works best on a mobile phone. Desktop computers may not support opening a text message automatically.
+                This feature works best on a mobile phone. Desktop computers may not
+                support opening a text message automatically.
             </p>
         </form>
     </section>
@@ -609,7 +647,7 @@
 </main>
 
 <footer>
-    <p><strong>ONE Lawns & Landscaping</strong></p>
+    <p><strong>ONE Lawns &amp; Landscaping</strong></p>
     <p>Anything Worth Doing, Is Worth Doing Right.</p>
     <p>Yukon • Mustang • El Reno • Oklahoma City</p>
     <p><a href="tel:+14059851213">(405) 985-1213</a></p>
@@ -626,12 +664,15 @@
 
     function closeRecurringForm() {
         recurringFormPanel.classList.remove("active");
-        planCards.forEach(card => card.setAttribute("aria-expanded", "false"));
+        planCards.forEach(card =>
+            card.setAttribute("aria-expanded", "false")
+        );
     }
 
     function closeCustomForm() {
         customFormPanel.classList.remove("active");
-        document.getElementById("custom-card").setAttribute("aria-expanded", "false");
+        document.getElementById("custom-card")
+            .setAttribute("aria-expanded", "false");
     }
 
     planCards.forEach(card => {
@@ -644,15 +685,23 @@
             recurringFormPanel.classList.add("active");
             customFormPanel.classList.remove("active");
 
-            planCards.forEach(item => item.setAttribute("aria-expanded", "false"));
-            card.setAttribute("aria-expanded", "true");
-            document.getElementById("custom-card").setAttribute("aria-expanded", "false");
+            planCards.forEach(item =>
+                item.setAttribute("aria-expanded", "false")
+            );
 
-            recurringFormPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+            card.setAttribute("aria-expanded", "true");
+            document.getElementById("custom-card")
+                .setAttribute("aria-expanded", "false");
+
+            recurringFormPanel.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
         });
     });
 
-    document.getElementById("close-recurring").addEventListener("click", closeRecurringForm);
+    document.getElementById("close-recurring")
+        .addEventListener("click", closeRecurringForm);
 
     document.getElementById("custom-card").addEventListener("click", () => {
         const isOpen = customFormPanel.classList.contains("active");
@@ -663,12 +712,19 @@
             closeCustomForm();
         } else {
             customFormPanel.classList.add("active");
-            document.getElementById("custom-card").setAttribute("aria-expanded", "true");
-            customFormPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+
+            document.getElementById("custom-card")
+                .setAttribute("aria-expanded", "true");
+
+            customFormPanel.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
         }
     });
 
-    document.getElementById("close-custom").addEventListener("click", closeCustomForm);
+    document.getElementById("close-custom")
+        .addEventListener("click", closeCustomForm);
 
     const frequencySelect = document.getElementById("frequency");
     const customIntervalField = document.getElementById("custom-interval-field");
@@ -686,92 +742,119 @@
     });
 
     function openTextMessage(message) {
-        const url = "sms:+" + phoneNumber + "?body=" + encodeURIComponent(message);
+        const url = "sms:+" + phoneNumber + "?body=" +
+            encodeURIComponent(message);
+
         window.location.href = url;
     }
 
-    document.getElementById("recurring-request-form").addEventListener("submit", event => {
-        event.preventDefault();
+    document.getElementById("recurring-request-form")
+        .addEventListener("submit", event => {
+            event.preventDefault();
 
-        const form = event.currentTarget;
+            const form = event.currentTarget;
 
-        if (!form.reportValidity()) {
-            return;
-        }
+            if (!form.reportValidity()) {
+                return;
+            }
 
-        const data = new FormData(form);
-        const frequency = data.get("frequency");
-        const interval = data.get("customInterval");
-        const payment = data.get("paymentSchedule");
+            const data = new FormData(form);
+            const frequency = data.get("frequency");
+            const interval = data.get("customInterval");
+            const payment = data.get("paymentSchedule");
 
-        let message = "ONE Lawns & Landscaping - Recurring Lawn Care Request\n\n";
-        message += "Plan: " + data.get("plan") + "\n";
-        message += "Name: " + data.get("name") + "\n";
-        message += "Property Address: " + data.get("address") + "\n";
-        message += "Other Contact Information: " + (data.get("contact") || "Not provided") + "\n";
-        message += "Service Frequency: " + (frequency === "Custom interval" ? interval : frequency) + "\n";
-        message += "Preferred Payment Schedule: " + payment + "\n";
-        message += "Additional Information: " + (data.get("details") || "None provided");
+            let message =
+                "ONE Lawns & Landscaping - Recurring Lawn Care Request\n\n";
 
-        openTextMessage(message);
-    });
+            message += "Plan: " + data.get("plan") + "\n";
+            message += "Name: " + data.get("name") + "\n";
+            message += "Property Address: " + data.get("address") + "\n";
+            message += "Other Contact Information: " +
+                (data.get("contact") || "Not provided") + "\n";
 
-    document.getElementById("service-type").addEventListener("change", event => {
-        const type = event.target.value;
-        const lawnOptions = document.getElementById("lawn-care-options");
-        const landscapingOptions = document.getElementById("landscaping-options");
+            message += "Service Frequency: " +
+                (frequency === "Custom interval" ? interval : frequency) + "\n";
 
-        lawnOptions.classList.toggle("active", type === "Lawn Care");
-        landscapingOptions.classList.toggle("active", type === "Landscaping");
+            message += "Preferred Payment Schedule: " + payment + "\n";
+            message += "Additional Information: " +
+                (data.get("details") || "None provided");
 
-        lawnOptions.querySelectorAll('input[type="checkbox"]').forEach(input => {
-            input.checked = false;
+            openTextMessage(message);
         });
-        landscapingOptions.querySelectorAll('input[type="checkbox"]').forEach(input => {
-            input.checked = false;
+
+    document.getElementById("service-type")
+        .addEventListener("change", event => {
+            const type = event.target.value;
+            const lawnOptions = document.getElementById("lawn-care-options");
+            const landscapingOptions =
+                document.getElementById("landscaping-options");
+
+            lawnOptions.classList.toggle("active", type === "Lawn Care");
+            landscapingOptions.classList.toggle(
+                "active",
+                type === "Landscaping"
+            );
+
+            lawnOptions.querySelectorAll('input[type="checkbox"]')
+                .forEach(input => {
+                    input.checked = false;
+                });
+
+            landscapingOptions.querySelectorAll('input[type="checkbox"]')
+                .forEach(input => {
+                    input.checked = false;
+                });
         });
-    });
 
-    document.getElementById("custom-request-form").addEventListener("submit", event => {
-        event.preventDefault();
+    document.getElementById("custom-request-form")
+        .addEventListener("submit", event => {
+            event.preventDefault();
 
-        const form = event.currentTarget;
+            const form = event.currentTarget;
 
-        if (!form.reportValidity()) {
-            return;
-        }
+            if (!form.reportValidity()) {
+                return;
+            }
 
-        const type = document.getElementById("service-type").value;
-        const activeFieldset = type === "Lawn Care"
-            ? document.getElementById("lawn-care-options")
-            : document.getElementById("landscaping-options");
+            const type = document.getElementById("service-type").value;
 
-        if (!activeFieldset.classList.contains("active")) {
-            alert("Please choose Lawn Care or Landscaping and select your services.");
-            return;
-        }
+            const activeFieldset = type === "Lawn Care"
+                ? document.getElementById("lawn-care-options")
+                : document.getElementById("landscaping-options");
 
-        const checkedServices = Array.from(
-            activeFieldset.querySelectorAll('input[name="services"]:checked')
-        ).map(input => input.value);
+            if (!activeFieldset.classList.contains("active")) {
+                alert("Please choose Lawn Care or Landscaping and select your services.");
+                return;
+            }
 
-        if (checkedServices.length === 0) {
-            alert("Please select at least one service.");
-            return;
-        }
+            const checkedServices = Array.from(
+                activeFieldset.querySelectorAll(
+                    'input[name="services"]:checked'
+                )
+            ).map(input => input.value);
 
-        const data = new FormData(form);
+            if (checkedServices.length === 0) {
+                alert("Please select at least one service.");
+                return;
+            }
 
-        let message = "ONE Lawns & Landscaping - Custom Quote Request\n\n";
-        message += "Category: " + type + "\n";
-        message += "Services Requested: " + checkedServices.join(", ") + "\n";
-        message += "Name: " + data.get("name") + "\n";
-        message += "Property Address: " + data.get("address") + "\n";
-        message += "Other Contact Information: " + (data.get("contact") || "Not provided") + "\n";
-        message += "Additional Details: " + (data.get("details") || "None provided");
+            const data = new FormData(form);
 
-        openTextMessage(message);
-    });
+            let message =
+                "ONE Lawns & Landscaping - Custom Quote Request\n\n";
+
+            message += "Category: " + type + "\n";
+            message += "Services Requested: " +
+                checkedServices.join(", ") + "\n";
+            message += "Name: " + data.get("name") + "\n";
+            message += "Property Address: " + data.get("address") + "\n";
+            message += "Other Contact Information: " +
+                (data.get("contact") || "Not provided") + "\n";
+            message += "Additional Details: " +
+                (data.get("details") || "None provided");
+
+            openTextMessage(message);
+        });
 </script>
 
 </body>
