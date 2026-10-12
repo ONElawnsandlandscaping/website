@@ -1,13 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Services | ONE Lawns & Landscaping</title>
-    <meta name="description" content="Explore lawn care and landscaping services from ONE Lawns & Landscaping in Yukon, Mustang, El Reno, and Oklahoma City, Oklahoma.">
-    <meta name="theme-color" content="#2f8c2f">
 
     <link rel="stylesheet" href="style.css?v=3">
 
@@ -27,7 +23,7 @@
             margin: 0;
             display: grid;
             grid-template-rows: auto 1fr auto;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
             color: #222;
             background: #f5f7f3;
         }
@@ -37,7 +33,7 @@
             width: 100%;
         }
 
-        body > main.services-page {
+        main.services-page {
             grid-row: 2;
             width: 100%;
             max-width: 1200px;
@@ -45,180 +41,156 @@
             padding: 40px 20px 60px;
         }
 
-        .services-heading {
-            margin-bottom: 35px;
+        .services-intro {
             text-align: center;
-        }
-
-        .services-heading h1 {
-            margin-bottom: 10px;
-            color: #1f6b2a;
-            font-size: clamp(30px, 4vw, 42px);
-        }
-
-        .services-heading p {
-            color: #555;
-            font-size: 17px;
-            line-height: 1.6;
-        }
-
-        .service-category {
             margin-bottom: 35px;
         }
 
-        .service-category h2 {
-            margin-bottom: 18px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #2f8c2f;
-            color: #1f6b2a;
-            font-size: 27px;
+        .services-intro h1 {
+            margin: 0 0 12px;
+            color: #245f24;
+            font-size: 2.4rem;
+        }
+
+        .services-intro p {
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .service-section {
+            margin-bottom: 35px;
+        }
+
+        .service-section h2 {
+            text-align: center;
+            color: #245f24;
+            font-size: 1.8rem;
+            margin: 0 0 20px;
         }
 
         .service-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
+            gap: 18px;
         }
 
-        .service-item {
-            display: flex;
-            align-items: center;
-            min-height: 65px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-left: 4px solid #2f8c2f;
-            border-radius: 7px;
+        .service-card {
             background: #fff;
-            font-size: 17px;
-            font-weight: bold;
-            line-height: 1.4;
+            border-radius: 10px;
+            padding: 22px 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #245f24;
+        }
+
+        .service-card h3 {
+            color: #245f24;
+            margin: 0 0 14px;
+            font-size: 1.2rem;
+        }
+
+        .service-card ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.9;
         }
 
         .request-section {
             margin-top: 45px;
             padding: 30px;
-            border: 1px solid #ddd;
-            border-top: 6px solid #2f8c2f;
-            border-radius: 10px;
             background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
         }
 
         .request-section h2 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            color: #1f6b2a;
-            font-size: clamp(25px, 3vw, 32px);
+            color: #245f24;
             text-align: center;
+            margin: 0 0 12px;
+            font-size: 1.8rem;
         }
 
-        .request-intro {
-            max-width: 650px;
-            margin: 0 auto 25px;
-            color: #444;
+        .request-section > p {
             text-align: center;
-            line-height: 1.6;
+            line-height: 1.7;
+            margin: 0 auto 25px;
+            max-width: 750px;
         }
 
         .request-form {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 18px;
-            max-width: 800px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
-        .form-field {
-            display: flex;
-            flex-direction: column;
-            gap: 7px;
-            min-width: 0;
+        .form-group {
+            margin-bottom: 18px;
         }
 
-        .form-field.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .form-field label {
-            color: #222;
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
             font-weight: bold;
         }
 
-        .form-field input,
-        .form-field textarea {
+        .form-group input,
+        .form-group textarea {
+            display: block;
             width: 100%;
-            min-height: 46px;
-            padding: 13px 14px;
-            border: 1px solid #bbb;
+            padding: 12px;
+            border: 1px solid #ccc;
             border-radius: 6px;
-            background: #fff;
-            color: #111;
             font: inherit;
+            background: #fff;
         }
 
-        .form-field textarea {
-            min-height: 120px;
+        .form-group textarea {
+            min-height: 110px;
             resize: vertical;
         }
 
-        .form-field input:focus,
-        .form-field textarea:focus {
-            border-color: #2f8c2f;
-            outline: 2px solid rgba(47, 140, 47, 0.18);
-        }
-
         .request-button {
-            grid-column: 1 / -1;
             display: block;
             width: 100%;
-            padding: 16px 20px;
-            border: 0;
-            border-radius: 7px;
-            background: #2f8c2f;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 6px;
+            background: #245f24;
             color: #fff;
-            font: inherit;
-            font-size: 18px;
+            font-size: 1rem;
             font-weight: bold;
-            text-align: center;
             cursor: pointer;
-            transition: background 0.2s ease;
         }
 
         .request-button:hover {
-            background: #1f6b2a;
+            background: #194719;
         }
 
-        .request-button:focus-visible,
-        .page-back:focus-visible {
-            outline: 3px solid #1d5eaf;
-            outline-offset: 3px;
-        }
-
-        .request-note {
-            grid-column: 1 / -1;
-            margin: 0;
-            color: #555;
-            font-size: 13px;
-            line-height: 1.5;
+        .form-note {
             text-align: center;
+            margin: 18px auto 0;
+            max-width: 650px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .page-navigation {
+            text-align: center;
+            margin-top: 35px;
         }
 
         .page-back {
-            display: block;
-            width: fit-content;
-            margin: 35px auto 0;
-            padding: 12px 22px;
-            border-radius: 6px;
-            background: #2f8c2f;
-            color: #fff;
+            display: inline-block;
+            color: #245f24;
             font-weight: bold;
             text-decoration: none;
+            padding: 10px 16px;
         }
 
         .page-back:hover {
-            background: #1f6b2a;
+            text-decoration: underline;
         }
 
-        /* Footer layout */
         body > footer {
             grid-row: 3;
             position: static !important;
@@ -240,49 +212,31 @@
             color: #fff;
         }
 
-        @media (max-width: 850px) {
+        @media (max-width: 800px) {
             .service-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
+
+            .services-intro h1 {
+                font-size: 2rem;
+            }
         }
 
-        @media (max-width: 600px) {
-            body > main.services-page {
-                padding: 28px 15px 40px;
-            }
-
-            .services-heading {
-                margin-bottom: 28px;
-            }
-
-            .service-category h2 {
-                font-size: 24px;
+        @media (max-width: 550px) {
+            main.services-page {
+                padding: 25px 15px 40px;
             }
 
             .service-grid {
                 grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .service-item {
-                min-height: 65px;
-                padding: 15px;
             }
 
             .request-section {
-                margin-top: 35px;
                 padding: 22px 16px;
             }
 
-            .request-form {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .form-field.full-width,
-            .request-button,
-            .request-note {
-                grid-column: auto;
+            .services-intro h1 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -290,180 +244,243 @@
 
 <body>
 
-<header class="site-header">
-    <a href="index.html" class="header-logo-link">
-        <img src="logo.png" alt="ONE Lawns & Landscaping" class="logo">
-    </a>
-</header>
+    <header class="site-header">
+        <a href="index.html" class="header-logo-link">
+            <img src="logo.png" alt="ONE Lawns & Landscaping" class="logo">
+        </a>
+    </header>
 
-<main class="services-page">
+    <main class="services-page">
 
-    <section class="services-heading">
-        <h1>OUR SERVICES</h1>
-        <p>
-            Quality lawn care and landscaping, done right.
-            Serving Yukon, Mustang, El Reno, and Oklahoma City.
-        </p>
-    </section>
+        <section class="services-intro">
+            <h1>Our Services</h1>
+            <p>
+                ONE Lawns & Landscaping provides dependable lawn care and
+                landscaping services to help keep your property looking its best.
+                We proudly serve Yukon, Mustang, El Reno, Oklahoma City, and
+                surrounding areas.
+            </p>
+        </section>
 
-    <section class="service-category">
-        <h2>Lawn Care</h2>
+        <section class="service-section">
+            <h2>Lawn Care</h2>
 
-        <div class="service-grid">
-            <div class="service-item">Mowing</div>
-            <div class="service-item">Weedeating</div>
-            <div class="service-item">Edging</div>
-            <div class="service-item">Blowing</div>
-            <div class="service-item">Fertilization</div>
-            <div class="service-item">Spot Spraying &amp; Weed Control</div>
-        </div>
-    </section>
+            <div class="service-grid">
 
-    <section class="service-category">
-        <h2>Landscaping</h2>
+                <div class="service-card">
+                    <h3>Lawn Maintenance</h3>
+                    <ul>
+                        <li>Mowing</li>
+                        <li>Weedeating</li>
+                        <li>Edging</li>
+                        <li>Blowing</li>
+                    </ul>
+                </div>
 
-        <div class="service-grid">
-            <div class="service-item">Flower Beds</div>
-            <div class="service-item">Planting Plants</div>
-            <div class="service-item">Mulch Installation</div>
-            <div class="service-item">Decorative Rock Installation</div>
-            <div class="service-item">Sod Installation</div>
-            <div class="service-item">Leveling</div>
-            <div class="service-item">Shrub &amp; Hedge Trimming</div>
-            <div class="service-item">Bush &amp; Brush Removal</div>
-            <div class="service-item">Tree Trimming</div>
-        </div>
-    </section>
+                <div class="service-card">
+                    <h3>Fertilization & Weed Control</h3>
+                    <ul>
+                        <li>Fertilization</li>
+                        <li>Spot Spraying & Weed Control</li>
+                    </ul>
+                </div>
 
-    <section class="request-section" id="request-service">
-        <h2>Request a Service Not Listed</h2>
+                <div class="service-card">
+                    <h3>Shrub & Hedge Care</h3>
+                    <ul>
+                        <li>Shrub & Hedge Trimming</li>
+                    </ul>
+                </div>
 
-        <p class="request-intro">
-            Don't see the service you need? Tell us about your project.
-            We'll prepare a text message you can send directly to
-            ONE Lawns &amp; Landscaping.
-        </p>
-
-        <form class="request-form" id="service-request-form">
-
-            <div class="form-field">
-                <label for="customer-name">Your Name *</label>
-                <input
-                    type="text"
-                    id="customer-name"
-                    name="customer-name"
-                    placeholder="First and last name"
-                    autocomplete="name"
-                    required
-                >
             </div>
+        </section>
 
-            <div class="form-field">
-                <label for="other-contact">Other Contact Info (Optional)</label>
-                <input
-                    type="text"
-                    id="other-contact"
-                    name="other-contact"
-                    placeholder="Email or another way to reach you"
-                >
+        <section class="service-section">
+            <h2>Landscaping</h2>
+
+            <div class="service-grid">
+
+                <div class="service-card">
+                    <h3>Flower Beds</h3>
+                    <ul>
+                        <li>Flower Bed Installation</li>
+                        <li>Planting Plants</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Mulch & Decorative Rock</h3>
+                    <ul>
+                        <li>Mulch Installation</li>
+                        <li>Decorative Rock Installation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Sod & Leveling</h3>
+                    <ul>
+                        <li>Sod Installation</li>
+                        <li>Leveling</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Shrubs & Hedges</h3>
+                    <ul>
+                        <li>Shrub & Hedge Trimming</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Brush & Tree Work</h3>
+                    <ul>
+                        <li>Bush & Brush Removal</li>
+                        <li>Tree Trimming</li>
+                    </ul>
+                </div>
+
             </div>
+        </section>
 
-            <div class="form-field full-width">
-                <label for="property-address">Property Address *</label>
-                <input
-                    type="text"
-                    id="property-address"
-                    name="property-address"
-                    placeholder="Street address, city, and ZIP code"
-                    autocomplete="street-address"
-                    required
-                >
-            </div>
+        <section class="request-section">
+            <h2>Need a Different Service?</h2>
 
-            <div class="form-field full-width">
-                <label for="requested-service">What Service Do You Need? *</label>
-                <input
-                    type="text"
-                    id="requested-service"
-                    name="requested-service"
-                    placeholder="Describe the service you are looking for"
-                    required
-                >
-            </div>
+            <p>
+                Don't see the service you're looking for? Tell us what you need,
+                and we'll review your request.
+            </p>
 
-            <div class="form-field full-width">
-                <label for="project-details">Additional Details (Optional)</label>
-                <textarea
-                    id="project-details"
-                    name="project-details"
-                    placeholder="Tell us about the project or anything else we should know."
-                ></textarea>
-            </div>
+            <form class="request-form" id="serviceRequestForm">
 
-            <button type="submit" class="request-button">
-                Text My Request
-            </button>
+                <div class="form-group">
+                    <label for="customerName">Name *</label>
+                    <input
+                        type="text"
+                        id="customerName"
+                        name="customerName"
+                        required
+                    >
+                </div>
 
-            <p class="request-note">
+                <div class="form-group">
+                    <label for="propertyAddress">Property Address *</label>
+                    <input
+                        type="text"
+                        id="propertyAddress"
+                        name="propertyAddress"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="requestedService">What service do you need? *</label>
+                    <input
+                        type="text"
+                        id="requestedService"
+                        name="requestedService"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="contactInfo">Other Contact Information (Optional)</label>
+                    <input
+                        type="text"
+                        id="contactInfo"
+                        name="contactInfo"
+                        placeholder="Email or another way to reach you"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="additionalDetails">Additional Details (Optional)</label>
+                    <textarea
+                        id="additionalDetails"
+                        name="additionalDetails"
+                        placeholder="Tell us more about the job..."
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="request-button">
+                    Text My Request
+                </button>
+
+            </form>
+
+            <p class="form-note">
                 Your messaging app will open with your request prepared.
                 Review it and press Send to submit it.
             </p>
 
-            <p class="request-note">
+            <p class="form-note">
                 This feature works best on a mobile phone. Desktop computers
                 may not support opening a text message automatically.
             </p>
+        </section>
 
-        </form>
-    </section>
+        <div class="page-navigation">
+            <a href="index.html" class="page-back">
+                Back to Home
+            </a>
+        </div>
 
-    <a href="index.html" class="page-back">
-        &larr; Back to Home
-    </a>
+    </main>
 
-</main>
+    <footer>
+        <p><strong>ONE Lawns & Landscaping</strong></p>
+        <p>Anything Worth Doing, Is Worth Doing Right.</p>
+        <p>Serving Yukon • Mustang • El Reno • Oklahoma City</p>
+        <p>
+            <a href="tel:+14059851213">(405) 985-1213</a>
+        </p>
+        <p>&copy; <span id="currentYear"></span> ONE Lawns & Landscaping. All rights reserved.</p>
+    </footer>
 
-<footer>
-    <p><strong>ONE Lawns &amp; Landscaping</strong></p>
-    <p>Anything Worth Doing, Is Worth Doing Right.</p>
-    <p>Yukon • Mustang • El Reno • Oklahoma City</p>
-    <p><a href="tel:+14059851213">(405) 985-1213</a></p>
-</footer>
+    <script>
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
 
-<script>
-    const requestForm = document.getElementById("service-request-form");
+        document.getElementById("serviceRequestForm").addEventListener(
+            "submit",
+            function (event) {
+                event.preventDefault();
 
-    requestForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+                const name =
+                    document.getElementById("customerName").value.trim();
 
-        if (!requestForm.reportValidity()) {
-            return;
-        }
+                const address =
+                    document.getElementById("propertyAddress").value.trim();
 
-        const name = document.getElementById("customer-name").value.trim();
-        const otherContact = document.getElementById("other-contact").value.trim();
-        const address = document.getElementById("property-address").value.trim();
-        const service = document.getElementById("requested-service").value.trim();
-        const details = document.getElementById("project-details").value.trim();
+                const service =
+                    document.getElementById("requestedService").value.trim();
 
-        let message =
-            "Hi ONE Lawns & Landscaping! I'd like to request a service not listed on your website.\n\n" +
-            "Name: " + name + "\n" +
-            "Property Address: " + address + "\n" +
-            "Service Requested: " + service;
+                const contact =
+                    document.getElementById("contactInfo").value.trim();
 
-        if (otherContact) {
-            message += "\nOther Contact Info: " + otherContact;
-        }
+                const details =
+                    document.getElementById("additionalDetails").value.trim();
 
-        if (details) {
-            message += "\nAdditional Details: " + details;
-        }
+                let message =
+                    "Unlisted Service Request - ONE Lawns & Landscaping\n\n" +
+                    "Name: " + name + "\n" +
+                    "Property Address: " + address + "\n" +
+                    "Requested Service: " + service;
 
-        window.location.href =
-            "sms:+14059851213?body=" + encodeURIComponent(message);
-    });
-</script>
+                if (contact) {
+                    message += "\nOther Contact Information: " + contact;
+                }
+
+                if (details) {
+                    message += "\nAdditional Details: " + details;
+                }
+
+                const smsLink =
+                    "sms:+14059851213?body=" + encodeURIComponent(message);
+
+                window.location.href = smsLink;
+            }
+        );
+    </script>
 
 </body>
 </html>
