@@ -12,10 +12,32 @@
     <link rel="stylesheet" href="style.css?v=3">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            min-height: 100%;
+            background: #245f24;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #f5f7f3;
+        }
+
         .services-page {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px 60px;
+            flex: 1 0 auto;
         }
 
         .services-heading {
@@ -32,6 +54,7 @@
         .services-heading p {
             color: #555;
             font-size: 17px;
+            line-height: 1.6;
         }
 
         .service-category {
@@ -60,9 +83,10 @@
             border: 1px solid #ddd;
             border-left: 4px solid #2f8c2f;
             border-radius: 7px;
-            background: #f5f5f5;
+            background: #fff;
             font-size: 17px;
             font-weight: bold;
+            line-height: 1.4;
         }
 
         /* Request an unlisted service */
@@ -73,10 +97,11 @@
             border: 1px solid #ddd;
             border-top: 6px solid #2f8c2f;
             border-radius: 10px;
-            background: #f5f5f5;
+            background: #fff;
         }
 
         .request-section h2 {
+            margin-top: 0;
             margin-bottom: 10px;
             color: #1f6b2a;
             font-size: clamp(25px, 3vw, 32px);
@@ -88,6 +113,7 @@
             margin: 0 auto 25px;
             color: #444;
             text-align: center;
+            line-height: 1.6;
         }
 
         .request-form {
@@ -102,6 +128,7 @@
             display: flex;
             flex-direction: column;
             gap: 7px;
+            min-width: 0;
         }
 
         .form-field.full-width {
@@ -116,6 +143,7 @@
         .form-field input,
         .form-field textarea {
             width: 100%;
+            min-height: 46px;
             padding: 13px 14px;
             border: 1px solid #bbb;
             border-radius: 6px;
@@ -156,10 +184,18 @@
             background: #1f6b2a;
         }
 
+        .request-button:focus-visible,
+        .page-back:focus-visible {
+            outline: 3px solid #1d5eaf;
+            outline-offset: 3px;
+        }
+
         .request-note {
             grid-column: 1 / -1;
+            margin: 0;
             color: #555;
             font-size: 13px;
+            line-height: 1.5;
             text-align: center;
         }
 
@@ -172,11 +208,33 @@
             background: #2f8c2f;
             color: #fff;
             font-weight: bold;
+            text-align: center;
             text-decoration: none;
         }
 
         .page-back:hover {
             background: #1f6b2a;
+        }
+
+        /* Footer stays at the bottom on short pages. */
+
+        footer {
+            flex-shrink: 0;
+            width: 100%;
+            margin-top: auto;
+            padding: 18px 15px;
+            background: #245f24;
+            color: #fff;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        footer p {
+            margin: 3px 0;
+        }
+
+        footer a {
+            color: #fff;
         }
 
         @media (max-width: 850px) {
@@ -361,22 +419,28 @@
 
 </main>
 
+<footer>
+    <p><strong>ONE Lawns &amp; Landscaping</strong></p>
+    <p>Anything Worth Doing, Is Worth Doing Right.</p>
+    <p>Yukon • Mustang • El Reno • Oklahoma City</p>
+    <p><a href="tel:+14059851213">(405) 985-1213</a></p>
+</footer>
+
 <script>
     const requestForm = document.getElementById("service-request-form");
 
     requestForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
+        if (!requestForm.reportValidity()) {
+            return;
+        }
+
         const name = document.getElementById("customer-name").value.trim();
         const otherContact = document.getElementById("other-contact").value.trim();
         const address = document.getElementById("property-address").value.trim();
         const service = document.getElementById("requested-service").value.trim();
         const details = document.getElementById("project-details").value.trim();
-
-        if (!name || !address || !service) {
-            requestForm.reportValidity();
-            return;
-        }
 
         let message =
             "Hi ONE Lawns & Landscaping! I'd like to request a service not listed on your website.\n\n" +
