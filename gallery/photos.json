@@ -4,6 +4,14 @@
     "type": "image"
   },
   {
+    "src": "gallery/Alexfront.jpg",
+    "type": "image"
+  },
+  {
+    "src": "gallery/back.jpg",
+    "type": "image"
+  },
+  {
     "src": "gallery/brettfront.jpg",
     "type": "image"
   },
@@ -12,11 +20,23 @@
     "type": "image"
   },
   {
+    "src": "gallery/kathyfront.jpg",
+    "type": "image"
+  },
+  {
     "src": "gallery/mike5thback.jpg",
     "type": "image"
   },
   {
     "src": "gallery/mike5thfront.jpg",
+    "type": "image"
+  },
+  {
+    "src": "gallery/mikefront.jpg",
+    "type": "image"
+  },
+  {
+    "src": "gallery/T+R front.jpg",
     "type": "image"
   },
   {
