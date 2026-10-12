@@ -186,6 +186,7 @@
             text-decoration: underline;
         }
 
+        /* Prevent any arrow from being added to Back to Home. */
         .page-back::before,
         .page-back::after {
             content: none !important;
@@ -279,13 +280,13 @@
                 <div class="service-card">
                     <ul>
                         <li>Fertilization</li>
-                        <li>Spot Spraying & Weed Control</li>
+                        <li>Spot Spraying &amp; Weed Control</li>
                     </ul>
                 </div>
 
                 <div class="service-card">
                     <ul>
-                        <li>Shrub & Hedge Trimming</li>
+                        <li>Shrub &amp; Hedge Trimming</li>
                     </ul>
                 </div>
             </div>
@@ -313,7 +314,7 @@
 
                 <div class="service-card">
                     <ul>
-                        <li>Bush & Brush Removal</li>
+                        <li>Bush &amp; Brush Removal</li>
                         <li>Tree Trimming</li>
                     </ul>
                 </div>
@@ -361,7 +362,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="contactInfo">Other Contact Information (Optional)</label>
+                    <label for="contactInfo">
+                        Other Contact Information (Optional)
+                    </label>
                     <input
                         type="text"
                         id="contactInfo"
@@ -371,7 +374,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="additionalDetails">Additional Details (Optional)</label>
+                    <label for="additionalDetails">
+                        Additional Details (Optional)
+                    </label>
                     <textarea
                         id="additionalDetails"
                         name="additionalDetails"
@@ -403,13 +408,16 @@
     </main>
 
     <footer>
-        <p><strong>ONE Lawns & Landscaping</strong></p>
+        <p><strong>ONE Lawns &amp; Landscaping</strong></p>
         <p>Anything Worth Doing, Is Worth Doing Right.</p>
         <p>Serving Yukon • Mustang • El Reno • Oklahoma City</p>
         <p>
             <a href="tel:+14059851213">(405) 985-1213</a>
         </p>
-        <p>&copy; <span id="currentYear"></span> ONE Lawns & Landscaping. All rights reserved.</p>
+        <p>
+            &copy; <span id="currentYear"></span>
+            ONE Lawns &amp; Landscaping. All rights reserved.
+        </p>
     </footer>
 
     <script>
