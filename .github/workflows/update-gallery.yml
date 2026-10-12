@@ -21,7 +21,7 @@ jobs:
         with:
           ref: ${{ github.ref_name }}
 
-      - name: Build photo list
+      - name: Build photo and video list
         shell: bash
         run: |
           python3 <<'PY'
@@ -31,12 +31,14 @@ jobs:
           folder = Path("gallery")
           folder.mkdir(parents=True, exist_ok=True)
 
-          extensions = {
+          image_extensions = {
               ".jpg", ".jpeg", ".png",
               ".webp", ".gif", ".avif"
           }
 
-          photos = []
+          video_extensions = {".mp4"}
+
+          media = []
 
           for path in sorted(
               folder.iterdir(),
@@ -45,30 +47,36 @@ jobs:
               if not path.is_file():
                   continue
 
-              if path.suffix.lower() not in extensions:
-                  continue
+              extension = path.suffix.lower()
 
-              photos.append({
-                  "src": "gallery/" + path.name
-              })
+              if extension in image_extensions:
+                  media.append({
+                      "src": "gallery/" + path.name,
+                      "type": "image"
+                  })
+              elif extension in video_extensions:
+                  media.append({
+                      "src": "gallery/" + path.name,
+                      "type": "video"
+                  })
 
           output = folder / "photos.json"
           output.write_text(
-              json.dumps(photos, indent=2) + "\n",
+              json.dumps(media, indent=2) + "\n",
               encoding="utf-8"
           )
 
-          print(f"Found {len(photos)} photos.")
+          print(f"Found {len(media)} photos and videos.")
           PY
 
-      - name: Save updated photo list
+      - name: Save updated media list
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add gallery/photos.json
 
           if git diff --cached --quiet; then
-            echo "Photo list is already up to date."
+            echo "Gallery list is already up to date."
           else
             git commit -m "Automatically update photo gallery"
             git push
