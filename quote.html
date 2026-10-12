@@ -7,9 +7,7 @@
 <title>Get a Quote | ONE Lawns & Landscaping</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 :root {
   --green: #286b3b;
@@ -22,7 +20,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   min-height: 100%;
   background: var(--dark-green);
 }
@@ -30,33 +27,31 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--background);
   color: var(--text);
+  background: var(--background);
   line-height: 1.6;
 }
 
 header {
-  flex-shrink: 0;
-  background: white;
+  flex: 0 0 auto;
+  background: #fff;
   padding: 10px 15px;
   text-align: center;
   border-bottom: 1px solid var(--border);
 }
 
-header a {
-  display: inline-block;
-}
+header a { display: inline-block; }
 
 .logo {
   display: block;
-  width: 170px !important;
-  height: 85px !important;
-  max-width: 70vw !important;
-  max-height: 85px !important;
-  object-fit: contain !important;
+  width: 260px;
+  height: 120px;
+  max-width: 80vw;
+  object-fit: contain;
   margin: 0 auto;
 }
 
@@ -79,9 +74,7 @@ h1 {
   margin: 0 0 12px;
 }
 
-h2 {
-  font-size: 1.65rem;
-}
+h2 { font-size: 1.65rem; }
 
 .intro {
   max-width: 750px;
@@ -107,7 +100,7 @@ h2 {
   width: 100%;
   min-width: 0;
   padding: 24px;
-  background: white;
+  background: #fff;
   color: var(--text);
   border: 1px solid var(--border);
   border-top: 6px solid var(--green);
@@ -122,12 +115,6 @@ h2 {
 .plan-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 7px 18px rgba(0,0,0,.09);
-}
-
-.plan-card:focus-visible,
-.custom-card:focus-visible {
-  outline: 3px solid var(--green);
-  outline-offset: 3px;
 }
 
 .plan-card h3 {
@@ -170,19 +157,16 @@ h2 {
   max-width: 650px;
   margin: 22px auto 0;
   padding: 25px;
-  background: white;
+  background: #fff;
   border: 2px solid var(--green);
   border-radius: 11px;
   color: var(--text);
   text-align: center;
   font: inherit;
   cursor: pointer;
-  box-shadow: 0 3px 12px rgba(0,0,0,.04);
 }
 
-.custom-card:hover {
-  background: var(--light-green);
-}
+.custom-card:hover { background: var(--light-green); }
 
 .custom-card h3 {
   margin: 0 0 8px;
@@ -195,7 +179,7 @@ h2 {
 }
 
 .panel {
-  background: white;
+  background: #fff;
   border: 1px solid var(--border);
   border-radius: 11px;
   padding: clamp(20px, 3vw, 32px);
@@ -204,9 +188,7 @@ h2 {
   scroll-margin-top: 20px;
 }
 
-.panel h2 {
-  margin-top: 0;
-}
+.panel h2 { margin-top: 0; }
 
 .panel-intro {
   color: var(--muted);
@@ -214,9 +196,7 @@ h2 {
   margin-bottom: 24px;
 }
 
-.hidden {
-  display: none !important;
-}
+.hidden { display: none !important; }
 
 .form-grid {
   display: grid;
@@ -231,23 +211,18 @@ h2 {
   min-width: 0;
 }
 
-.full {
-  grid-column: 1 / -1;
-}
+.full { grid-column: 1 / -1; }
 
-label, .field-label {
-  font-weight: bold;
-}
+label, .field-label { font-weight: bold; }
 
 input:not([type="checkbox"]):not([type="radio"]),
-select,
-textarea {
+select, textarea {
   width: 100%;
   min-width: 0;
   padding: 13px 14px;
   border: 1px solid #c5c5c5;
   border-radius: 6px;
-  background: white;
+  background: #fff;
   color: var(--text);
   font: inherit;
 }
@@ -275,7 +250,7 @@ input:focus, select:focus, textarea:focus {
   padding: 12px;
   border: 1px solid var(--border);
   border-radius: 6px;
-  background: white;
+  background: #fff;
   cursor: pointer;
   font-weight: normal;
 }
@@ -300,15 +275,13 @@ input:focus, select:focus, textarea:focus {
   border: 0;
   border-radius: 6px;
   background: var(--green);
-  color: white;
+  color: #fff;
   font: inherit;
   font-weight: bold;
   cursor: pointer;
 }
 
-.primary-button:hover {
-  background: var(--dark-green);
-}
+.primary-button:hover { background: var(--dark-green); }
 
 .message-notes {
   border-top: 1px solid #ddd;
@@ -334,38 +307,29 @@ input:focus, select:focus, textarea:focus {
   display: inline-block;
   padding: 12px 22px;
   background: var(--green);
-  color: white;
+  color: #fff;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
 }
 
-.back-button:hover {
-  background: var(--dark-green);
-}
+.back-button:hover { background: var(--dark-green); }
 
 footer {
-  flex-shrink: 0;
+  flex: 0 0 auto;
   width: 100%;
   margin-top: auto;
   padding: 24px 15px;
   background: var(--dark-green);
-  color: white;
+  color: #fff;
   text-align: center;
 }
 
-footer p {
-  margin: 5px;
-}
-
-footer a {
-  color: white;
-}
+footer p { margin: 5px; }
+footer a { color: #fff; }
 
 @media (max-width: 800px) {
-  .plans {
-    grid-template-columns: 1fr;
-  }
+  .plans { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 550px) {
@@ -374,24 +338,14 @@ footer a {
     padding-top: 25px;
   }
 
-  .form-grid,
-  .choice-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .panel {
-    padding: 18px;
-  }
-
-  .section-title {
-    margin-top: 32px;
-  }
+  .form-grid, .choice-grid { grid-template-columns: 1fr; }
+  .panel { padding: 18px; }
+  .section-title { margin-top: 32px; }
 }
 </style>
 </head>
 
 <body>
-
 <header>
   <a href="index.html" aria-label="ONE Lawns & Landscaping home">
     <img class="logo" src="logo.png" alt="ONE Lawns & Landscaping">
@@ -400,7 +354,6 @@ footer a {
 
 <main>
   <h1>Get a Quote</h1>
-
   <p class="intro">
     Choose a lawn care plan for recurring service or request a custom quote
     for a specific project. Select an option below to get started.
@@ -409,7 +362,6 @@ footer a {
   <h2 class="section-title">Recurring Lawn Care Plans</h2>
 
   <div class="plans">
-
     <button type="button" class="plan-card" data-plan="Essential Lawn Care">
       <h3>Essential Lawn Care</h3>
       <p>Our core lawn maintenance services to keep your yard looking neat.</p>
@@ -442,10 +394,9 @@ footer a {
       </ul>
       <span class="plan-link">Select Complete Lawn Care →</span>
     </button>
-
   </div>
 
-  <p style="text-align:center; margin:14px 0 0;">
+  <p style="text-align:center;margin:14px 0 0">
     <a class="treatment-link" href="complete-lawn-care.html">
       Learn About Fertilization &amp; Spot Spraying
     </a>
@@ -462,16 +413,14 @@ footer a {
     <span class="plan-link">Request a Custom Quote →</span>
   </button>
 
-  <!-- RECURRING PLAN REQUEST -->
   <section class="panel hidden" id="planRequest">
     <h2 id="planHeading">Lawn Care Plan Request</h2>
     <p class="panel-intro">
       You selected a lawn care plan. Fill in the information below and
-      we will prepare a text request for you.
+      we'll prepare a text request for you.
     </p>
 
     <form id="recurringForm" class="form-grid">
-
       <div class="field full">
         <label for="planName">Selected Plan *</label>
         <input id="planName" readonly required>
@@ -509,12 +458,10 @@ footer a {
 
       <div class="field full">
         <span class="field-label">Payment Schedule *</span>
-
         <label class="choice">
           <input type="radio" name="payment" value="On the date each service is provided" required>
           On the date each service is provided
         </label>
-
         <label class="choice">
           <input type="radio" name="payment" value="At the start of every month" required>
           At the start of every month
@@ -529,7 +476,6 @@ footer a {
       <div class="field full">
         <button class="primary-button" type="submit">Text My Plan Request</button>
       </div>
-
     </form>
 
     <div class="message-notes">
@@ -538,24 +484,18 @@ footer a {
     </div>
   </section>
 
-  <!-- CUSTOM QUOTE REQUEST -->
   <section class="panel hidden" id="customQuote">
     <h2>Custom Quote Request</h2>
-    <p class="panel-intro">
-      Choose a category, then select all the services you need.
-    </p>
+    <p class="panel-intro">Choose a category, then select all the services you need.</p>
 
     <form id="customForm" class="form-grid">
-
       <div class="field full">
         <span class="field-label">What type of service do you need? *</span>
-
         <div class="choice-grid">
           <label class="choice">
             <input type="radio" name="category" value="Lawn Care" checked>
             Lawn Care
           </label>
-
           <label class="choice">
             <input type="radio" name="category" value="Landscaping">
             Landscaping
@@ -591,7 +531,6 @@ footer a {
       <div class="field full">
         <button class="primary-button" type="submit">Text My Request</button>
       </div>
-
     </form>
 
     <div class="message-notes">
@@ -640,9 +579,7 @@ const landscapingServices = [
 ];
 
 const planServices = {
-  'Essential Lawn Care': [
-    'Mowing', 'Weedeating', 'Edging', 'Blowing'
-  ],
+  'Essential Lawn Care': ['Mowing', 'Weedeating', 'Edging', 'Blowing'],
   'Enhanced Lawn Care': [
     'Mowing', 'Weedeating', 'Edging', 'Blowing',
     'Shrub & Hedge Trimming'
@@ -661,14 +598,9 @@ const planName = document.getElementById('planName');
 function openPlan(plan) {
   customSection.classList.add('hidden');
   planSection.classList.remove('hidden');
-
   planName.value = plan;
   document.getElementById('planHeading').textContent = plan + ' Request';
-
-  planSection.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
+  planSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 document.querySelectorAll('.plan-card').forEach(card => {
@@ -678,22 +610,12 @@ document.querySelectorAll('.plan-card').forEach(card => {
 document.getElementById('openCustom').addEventListener('click', () => {
   planSection.classList.add('hidden');
   customSection.classList.remove('hidden');
-
-  customSection.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
+  customSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
 function renderServices() {
-  const category = document.querySelector(
-    'input[name="category"]:checked'
-  ).value;
-
-  const services = category === 'Lawn Care'
-    ? lawnServices
-    : landscapingServices;
-
+  const category = document.querySelector('input[name="category"]:checked').value;
+  const services = category === 'Lawn Care' ? lawnServices : landscapingServices;
   const container = document.getElementById('customServices');
   container.replaceChildren();
 
@@ -715,7 +637,6 @@ function renderServices() {
 document.querySelectorAll('input[name="category"]').forEach(input => {
   input.addEventListener('change', renderServices);
 });
-
 renderServices();
 
 const frequency = document.getElementById('frequency');
@@ -724,10 +645,8 @@ const intervalInput = document.getElementById('customInterval');
 
 frequency.addEventListener('change', () => {
   const custom = frequency.value === 'Custom interval';
-
   intervalWrap.classList.toggle('hidden', !custom);
   intervalInput.required = custom;
-
   if (!custom) intervalInput.value = '';
 });
 
@@ -735,7 +654,6 @@ document.getElementById('recurringForm').addEventListener('submit', event => {
   event.preventDefault();
 
   const payment = document.querySelector('input[name="payment"]:checked');
-
   if (!payment) {
     alert('Please select a payment schedule.');
     return;
@@ -743,7 +661,6 @@ document.getElementById('recurringForm').addEventListener('submit', event => {
 
   if (frequency.value === 'Custom interval') {
     const days = Number(intervalInput.value);
-
     if (!Number.isInteger(days) || days < 3 || days > 13) {
       alert('Please enter a whole number from 3 to 13 days.');
       intervalInput.focus();
@@ -752,7 +669,6 @@ document.getElementById('recurringForm').addEventListener('submit', event => {
   }
 
   const plan = planName.value;
-
   const body = [
     'ONE Lawns & Landscaping - Lawn Care Plan Request',
     '',
@@ -760,19 +676,17 @@ document.getElementById('recurringForm').addEventListener('submit', event => {
     'Included Services: ' + planServices[plan].join(', '),
     'Name: ' + document.getElementById('customerName').value.trim(),
     'Property Address: ' + document.getElementById('propertyAddress').value.trim(),
-    'Other Contact Information: ' +
-      (document.getElementById('otherContact').value.trim() || 'Not provided'),
-    'Service Frequency: ' +
-      (frequency.value === 'Custom interval'
+    'Other Contact Information: ' + (document.getElementById('otherContact').value.trim() || 'Not provided'),
+    'Service Frequency: ' + (
+      frequency.value === 'Custom interval'
         ? intervalInput.value + ' days'
-        : frequency.value),
+        : frequency.value
+    ),
     'Payment Schedule: ' + payment.value,
-    'Additional Information: ' +
-      (document.getElementById('planDetails').value.trim() || 'None')
+    'Additional Information: ' + (document.getElementById('planDetails').value.trim() || 'None')
   ].join('\n');
 
-  window.location.href =
-    'sms:' + phoneNumber + '?body=' + encodeURIComponent(body);
+  window.location.href = 'sms:' + phoneNumber + '?body=' + encodeURIComponent(body);
 });
 
 document.getElementById('customForm').addEventListener('submit', event => {
@@ -787,10 +701,7 @@ document.getElementById('customForm').addEventListener('submit', event => {
     return;
   }
 
-  const category = document.querySelector(
-    'input[name="category"]:checked'
-  ).value;
-
+  const category = document.querySelector('input[name="category"]:checked').value;
   const body = [
     'ONE Lawns & Landscaping - Custom Quote Request',
     '',
@@ -798,16 +709,12 @@ document.getElementById('customForm').addEventListener('submit', event => {
     'Requested Services: ' + selected.join(', '),
     'Name: ' + document.getElementById('customName').value.trim(),
     'Property Address: ' + document.getElementById('customAddress').value.trim(),
-    'Other Contact Information: ' +
-      (document.getElementById('customContact').value.trim() || 'Not provided'),
-    'Additional Details: ' +
-      (document.getElementById('customDetails').value.trim() || 'None')
+    'Other Contact Information: ' + (document.getElementById('customContact').value.trim() || 'Not provided'),
+    'Additional Details: ' + (document.getElementById('customDetails').value.trim() || 'None')
   ].join('\n');
 
-  window.location.href =
-    'sms:' + phoneNumber + '?body=' + encodeURIComponent(body);
+  window.location.href = 'sms:' + phoneNumber + '?body=' + encodeURIComponent(body);
 });
 </script>
-
 </body>
 </html>
