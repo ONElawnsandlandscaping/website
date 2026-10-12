@@ -2,719 +2,777 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Get a Quote | ONE Lawns & Landscaping</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote | ONE Lawns & Landscaping</title>
+    <meta name="description" content="Request a lawn care or landscaping quote from ONE Lawns & Landscaping in Yukon, Mustang, El Reno, and Oklahoma City, Oklahoma.">
+    <meta name="theme-color" content="#2f8c2f">
 
-<style>
-* { box-sizing: border-box; }
+    <link rel="stylesheet" href="style.css?v=3">
 
-:root {
-  --green: #286b3b;
-  --dark-green: #174a29;
-  --light-green: #edf4eb;
-  --background: #f5f7f4;
-  --border: #d6dfd3;
-  --text: #263027;
-  --muted: #606a60;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-html {
-  min-height: 100%;
-  background: var(--dark-green);
-}
+        html {
+            min-height: 100%;
+            background: #245f24;
+        }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-  background: var(--background);
-  line-height: 1.6;
-}
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #f5f7f3;
+        }
 
-header {
-  flex: 0 0 auto;
-  background: #fff;
-  padding: 10px 15px;
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-}
+        main {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 28px 18px 40px;
+            flex: 1 0 auto;
+        }
 
-header a { display: inline-block; }
+        .page-heading {
+            text-align: center;
+            margin: 0 0 10px;
+            color: #245f24;
+            font-size: clamp(28px, 5vw, 40px);
+        }
 
-.logo {
-  display: block;
-  width: 260px;
-  height: 120px;
-  max-width: 80vw;
-  object-fit: contain;
-  margin: 0 auto;
-}
+        .page-intro {
+            max-width: 760px;
+            margin: 0 auto 28px;
+            text-align: center;
+            line-height: 1.6;
+        }
 
-main {
-  flex: 1 0 auto;
-  width: calc(100% - 32px);
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 32px 0 45px;
-}
+        .section-heading {
+            margin: 32px 0 16px;
+            color: #245f24;
+            text-align: center;
+            font-size: 26px;
+        }
 
-h1, h2, h3 {
-  color: var(--dark-green);
-  line-height: 1.3;
-}
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            align-items: stretch;
+        }
 
-h1 {
-  text-align: center;
-  font-size: clamp(2rem, 4vw, 2.6rem);
-  margin: 0 0 12px;
-}
+        .plan-card,
+        .custom-card {
+            width: 100%;
+            padding: 24px 20px;
+            border: 2px solid #2f8c2f;
+            border-top: 7px solid #2f8c2f;
+            border-radius: 10px;
+            background: #fff;
+            color: #222;
+            text-align: center;
+            cursor: pointer;
+            font: inherit;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
 
-h2 { font-size: 1.65rem; }
+        .plan-card:hover,
+        .custom-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.12);
+        }
 
-.intro {
-  max-width: 750px;
-  margin: 0 auto 32px;
-  text-align: center;
-  color: var(--muted);
-}
+        .plan-card:focus-visible,
+        .custom-card:focus-visible,
+        button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid #1d5eaf;
+            outline-offset: 3px;
+        }
 
-.section-title {
-  text-align: center;
-  margin: 38px 0 20px;
-}
+        .plan-card h3,
+        .custom-card h3 {
+            margin: 0 0 12px;
+            color: #245f24;
+            font-size: 22px;
+        }
 
-.plans {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
+        .plan-card p,
+        .custom-card p {
+            margin: 0;
+            line-height: 1.55;
+        }
 
-.plan-card {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-width: 0;
-  padding: 24px;
-  background: #fff;
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-top: 6px solid var(--green);
-  border-radius: 11px;
-  box-shadow: 0 3px 12px rgba(0,0,0,.04);
-  text-align: left;
-  font: inherit;
-  cursor: pointer;
-  transition: transform .15s, box-shadow .15s;
-}
+        .plan-card .select-hint,
+        .custom-card .select-hint {
+            display: block;
+            margin-top: 18px;
+            color: #245f24;
+            font-weight: bold;
+        }
 
-.plan-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 18px rgba(0,0,0,.09);
-}
+        .form-panel {
+            display: none;
+            margin-top: 28px;
+            padding: 24px;
+            border: 1px solid #d0d8cc;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+        }
 
-.plan-card h3 {
-  font-size: 1.4rem;
-  margin: 0 0 10px;
-}
+        .form-panel.active {
+            display: block;
+        }
 
-.plan-card p {
-  color: var(--muted);
-  margin: 0 0 10px;
-}
+        .form-panel h2 {
+            margin: 0 0 10px;
+            color: #245f24;
+            text-align: center;
+        }
 
-.plan-card ul {
-  padding-left: 21px;
-  margin: 8px 0 20px;
-}
+        .form-description {
+            margin: 0 auto 22px;
+            max-width: 720px;
+            text-align: center;
+            line-height: 1.55;
+        }
 
-.plan-link {
-  display: block;
-  margin-top: auto;
-  padding: 10px;
-  border-radius: 6px;
-  background: var(--light-green);
-  color: var(--dark-green);
-  text-align: center;
-  font-weight: bold;
-}
+        .selected-plan {
+            margin: 0 0 20px;
+            padding: 12px;
+            border-radius: 6px;
+            background: #edf5e9;
+            color: #245f24;
+            text-align: center;
+            font-weight: bold;
+        }
 
-.treatment-link {
-  display: inline-block;
-  color: var(--green);
-  font-weight: bold;
-  text-decoration: underline;
-  margin: 0 0 14px;
-}
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
 
-.custom-card {
-  display: block;
-  width: 100%;
-  max-width: 650px;
-  margin: 22px auto 0;
-  padding: 25px;
-  background: #fff;
-  border: 2px solid var(--green);
-  border-radius: 11px;
-  color: var(--text);
-  text-align: center;
-  font: inherit;
-  cursor: pointer;
-}
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            min-width: 0;
+        }
 
-.custom-card:hover { background: var(--light-green); }
+        .field.full-width {
+            grid-column: 1 / -1;
+        }
 
-.custom-card h3 {
-  margin: 0 0 8px;
-  font-size: 1.5rem;
-}
+        .field label,
+        fieldset legend {
+            font-weight: bold;
+        }
 
-.custom-card p {
-  color: var(--muted);
-  margin: 8px 0 18px;
-}
+        .field input,
+        .field select,
+        .field textarea {
+            width: 100%;
+            min-height: 44px;
+            padding: 10px 12px;
+            border: 1px solid #aeb8aa;
+            border-radius: 5px;
+            background: #fff;
+            color: #222;
+            font: inherit;
+        }
 
-.panel {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 11px;
-  padding: clamp(20px, 3vw, 32px);
-  margin-top: 35px;
-  box-shadow: 0 3px 12px rgba(0,0,0,.04);
-  scroll-margin-top: 20px;
-}
+        .field textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
 
-.panel h2 { margin-top: 0; }
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            outline: 2px solid #2f8c2f;
+            outline-offset: 1px;
+        }
 
-.panel-intro {
-  color: var(--muted);
-  margin-top: -5px;
-  margin-bottom: 24px;
-}
+        .field small {
+            color: #555;
+            line-height: 1.4;
+        }
 
-.hidden { display: none !important; }
+        fieldset {
+            min-width: 0;
+            margin: 0;
+            padding: 14px;
+            border: 1px solid #cbd3c7;
+            border-radius: 6px;
+        }
 
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
+        .radio-options,
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 12px;
+        }
 
-.field {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  min-width: 0;
-}
+        .radio-options label,
+        .checkbox-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            line-height: 1.4;
+            font-weight: normal;
+            cursor: pointer;
+        }
 
-.full { grid-column: 1 / -1; }
+        .radio-options input,
+        .checkbox-option input {
+            width: 18px;
+            height: 18px;
+            margin: 2px 0 0;
+            flex: 0 0 auto;
+            accent-color: #2f8c2f;
+        }
 
-label, .field-label { font-weight: bold; }
+        .form-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
 
-input:not([type="checkbox"]):not([type="radio"]),
-select, textarea {
-  width: 100%;
-  min-width: 0;
-  padding: 13px 14px;
-  border: 1px solid #c5c5c5;
-  border-radius: 6px;
-  background: #fff;
-  color: var(--text);
-  font: inherit;
-}
+        .primary-button,
+        .secondary-button,
+        .back-button {
+            display: inline-block;
+            padding: 12px 22px;
+            border: 0;
+            border-radius: 6px;
+            font: inherit;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-textarea {
-  min-height: 120px;
-  resize: vertical;
-}
+        .primary-button,
+        .back-button {
+            background: #2f8c2f;
+            color: #fff;
+        }
 
-input:focus, select:focus, textarea:focus {
-  outline: 2px solid var(--green);
-  outline-offset: 1px;
-}
+        .primary-button:hover,
+        .back-button:hover {
+            background: #246f24;
+        }
 
-.choice-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
+        .secondary-button {
+            background: #e5e9e2;
+            color: #222;
+        }
 
-.choice {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 12px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: #fff;
-  cursor: pointer;
-  font-weight: normal;
-}
+        .secondary-button:hover {
+            background: #d5ddd1;
+        }
 
-.choice input {
-  margin-top: 6px;
-  accent-color: var(--green);
-  flex-shrink: 0;
-}
+        .form-note {
+            margin: 12px auto 0;
+            color: #555;
+            font-size: 13px;
+            line-height: 1.5;
+            text-align: center;
+        }
 
-.choice:has(input:checked) {
-  border-color: var(--green);
-  background: var(--light-green);
-}
+        .category-select {
+            margin-bottom: 20px;
+        }
 
-.primary-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 15px 18px;
-  border: 0;
-  border-radius: 6px;
-  background: var(--green);
-  color: #fff;
-  font: inherit;
-  font-weight: bold;
-  cursor: pointer;
-}
+        .service-category {
+            display: none;
+            margin-top: 18px;
+        }
 
-.primary-button:hover { background: var(--dark-green); }
+        .service-category.active {
+            display: block;
+        }
 
-.message-notes {
-  border-top: 1px solid #ddd;
-  margin-top: 22px;
-  padding-top: 12px;
-}
+        .custom-other {
+            margin-top: 18px;
+        }
 
-.note {
-  max-width: 850px;
-  margin: 12px auto 0;
-  color: var(--muted);
-  font-size: .88rem;
-  text-align: center;
-}
+        .bottom-navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 32px;
+        }
 
-.button-row {
-  display: flex;
-  justify-content: center;
-  margin-top: 28px;
-}
+        footer {
+            flex-shrink: 0;
+            width: 100%;
+            margin-top: auto;
+            padding: 18px 15px;
+            background: #245f24;
+            color: #fff;
+            text-align: center;
+            line-height: 1.6;
+        }
 
-.back-button {
-  display: inline-block;
-  padding: 12px 22px;
-  background: var(--green);
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
+        footer p {
+            margin: 3px 0;
+        }
 
-.back-button:hover { background: var(--dark-green); }
+        footer a {
+            color: #fff;
+        }
 
-footer {
-  flex: 0 0 auto;
-  width: 100%;
-  margin-top: auto;
-  padding: 24px 15px;
-  background: var(--dark-green);
-  color: #fff;
-  text-align: center;
-}
+        @media (max-width: 760px) {
+            .plan-grid {
+                grid-template-columns: 1fr;
+            }
 
-footer p { margin: 5px; }
-footer a { color: #fff; }
+            .plan-card,
+            .custom-card {
+                padding: 22px 18px;
+            }
 
-@media (max-width: 800px) {
-  .plans { grid-template-columns: 1fr; }
-}
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
 
-@media (max-width: 550px) {
-  main {
-    width: calc(100% - 22px);
-    padding-top: 25px;
-  }
+            .field.full-width {
+                grid-column: auto;
+            }
 
-  .form-grid, .choice-grid { grid-template-columns: 1fr; }
-  .panel { padding: 18px; }
-  .section-title { margin-top: 32px; }
-}
-</style>
+            .radio-options,
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-panel {
+                padding: 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<header>
-  <a href="index.html" aria-label="ONE Lawns & Landscaping home">
-    <img class="logo" src="logo.png" alt="ONE Lawns & Landscaping">
-  </a>
+
+<header class="site-header">
+    <a href="index.html" class="header-logo-link">
+        <img src="logo.png" alt="ONE Lawns & Landscaping" class="logo">
+    </a>
 </header>
 
 <main>
-  <h1>Get a Quote</h1>
-  <p class="intro">
-    Choose a lawn care plan for recurring service or request a custom quote
-    for a specific project. Select an option below to get started.
-  </p>
-
-  <h2 class="section-title">Recurring Lawn Care Plans</h2>
-
-  <div class="plans">
-    <button type="button" class="plan-card" data-plan="Essential Lawn Care">
-      <h3>Essential Lawn Care</h3>
-      <p>Our core lawn maintenance services to keep your yard looking neat.</p>
-      <ul>
-        <li>Mowing</li>
-        <li>Weedeating</li>
-        <li>Edging</li>
-        <li>Blowing</li>
-      </ul>
-      <span class="plan-link">Select Essential Lawn Care →</span>
-    </button>
-
-    <button type="button" class="plan-card" data-plan="Enhanced Lawn Care">
-      <h3>Enhanced Lawn Care</h3>
-      <p>Essential lawn care with additional shrub and hedge maintenance.</p>
-      <ul>
-        <li>Everything in Essential</li>
-        <li>Shrub &amp; Hedge Trimming</li>
-      </ul>
-      <span class="plan-link">Select Enhanced Lawn Care →</span>
-    </button>
-
-    <button type="button" class="plan-card" data-plan="Complete Lawn Care">
-      <h3>Complete Lawn Care</h3>
-      <p>Our most comprehensive recurring lawn care option.</p>
-      <ul>
-        <li>Everything in Enhanced</li>
-        <li>Fertilization</li>
-        <li>Weed Control &amp; Spot Spraying</li>
-      </ul>
-      <span class="plan-link">Select Complete Lawn Care →</span>
-    </button>
-  </div>
-
-  <p style="text-align:center;margin:14px 0 0">
-    <a class="treatment-link" href="complete-lawn-care.html">
-      Learn About Fertilization &amp; Spot Spraying
-    </a>
-  </p>
-
-  <h2 class="section-title">Need a Specific Job Done?</h2>
-
-  <button type="button" class="custom-card" id="openCustom">
-    <h3>Custom Quote</h3>
-    <p>
-      Need a flower bed, mulch, decorative rock, leveling, sod, trimming,
-      or another service? Select the work you need and send us your request.
-    </p>
-    <span class="plan-link">Request a Custom Quote →</span>
-  </button>
-
-  <section class="panel hidden" id="planRequest">
-    <h2 id="planHeading">Lawn Care Plan Request</h2>
-    <p class="panel-intro">
-      You selected a lawn care plan. Fill in the information below and
-      we'll prepare a text request for you.
+    <h1 class="page-heading">Get a Quote</h1>
+    <p class="page-intro">
+        Choose a recurring lawn care plan or request a custom quote for lawn care
+        and landscaping. Every property is different, so we provide quotes based
+        on the services your property needs.
     </p>
 
-    <form id="recurringForm" class="form-grid">
-      <div class="field full">
-        <label for="planName">Selected Plan *</label>
-        <input id="planName" readonly required>
-      </div>
+    <h2 class="section-heading">Recurring Lawn Care Plans</h2>
 
-      <div class="field">
-        <label for="customerName">Full Name *</label>
-        <input id="customerName" placeholder="First and last name" autocomplete="name" required>
-      </div>
+    <section class="plan-grid" aria-label="Recurring lawn care plans">
+        <button class="plan-card" type="button" data-plan="Essential Lawn Care"
+                aria-controls="recurring-form" aria-expanded="false">
+            <h3>Essential Lawn Care</h3>
+            <p>Mowing, weedeating, edging, and blowing.</p>
+            <span class="select-hint">Request This Plan</span>
+        </button>
 
-      <div class="field">
-        <label for="propertyAddress">Property Address *</label>
-        <input id="propertyAddress" placeholder="Street address, city, and ZIP code" autocomplete="street-address" required>
-      </div>
+        <button class="plan-card" type="button" data-plan="Enhanced Lawn Care"
+                aria-controls="recurring-form" aria-expanded="false">
+            <h3>Enhanced Lawn Care</h3>
+            <p>Everything in Essential Lawn Care, plus shrub and hedge trimming.</p>
+            <span class="select-hint">Request This Plan</span>
+        </button>
 
-      <div class="field full">
-        <label for="otherContact">Other Contact Information (Optional)</label>
-        <input id="otherContact" placeholder="Email or another way to reach you">
-      </div>
+        <button class="plan-card" type="button" data-plan="Complete Lawn Care"
+                aria-controls="recurring-form" aria-expanded="false">
+            <h3>Complete Lawn Care</h3>
+            <p>
+                Everything in Enhanced Lawn Care, plus fertilization, weed control,
+                and spot spraying.
+            </p>
+            <span class="select-hint">Request This Plan</span>
+        </button>
+    </section>
 
-      <div class="field full">
-        <label for="frequency">Service Frequency *</label>
-        <select id="frequency" required>
-          <option value="">Choose frequency</option>
-          <option value="Weekly (every 7 days)">Weekly — every 7 days</option>
-          <option value="Biweekly (every 14 days)">Biweekly — every 14 days</option>
-          <option value="Custom interval">Custom interval — 3–13 days</option>
-        </select>
-      </div>
+    <section class="form-panel" id="recurring-form" aria-live="polite">
+        <h2>Recurring Lawn Care Request</h2>
+        <p class="form-description">
+            Fill out the information below to request your selected plan.
+            We will review your request and follow up about your quote.
+        </p>
 
-      <div class="field full hidden" id="intervalWrap">
-        <label for="customInterval">Custom Interval (3–13 days) *</label>
-        <input id="customInterval" type="number" min="3" max="13" step="1">
-      </div>
+        <p class="selected-plan" id="selected-plan">Selected plan: None</p>
 
-      <div class="field full">
-        <span class="field-label">Payment Schedule *</span>
-        <label class="choice">
-          <input type="radio" name="payment" value="On the date each service is provided" required>
-          On the date each service is provided
-        </label>
-        <label class="choice">
-          <input type="radio" name="payment" value="At the start of every month" required>
-          At the start of every month
-        </label>
-      </div>
+        <form id="recurring-request-form">
+            <input type="hidden" id="plan-name" name="plan" required>
 
-      <div class="field full">
-        <label for="planDetails">Additional Information (Optional)</label>
-        <textarea id="planDetails" placeholder="Anything else we should know?"></textarea>
-      </div>
+            <div class="form-grid">
+                <div class="field">
+                    <label for="recurring-name">Your Name *</label>
+                    <input id="recurring-name" name="name" type="text"
+                           autocomplete="name" required>
+                </div>
 
-      <div class="field full">
-        <button class="primary-button" type="submit">Text My Plan Request</button>
-      </div>
-    </form>
+                <div class="field">
+                    <label for="recurring-address">Property Address *</label>
+                    <input id="recurring-address" name="address" type="text"
+                           autocomplete="street-address" required>
+                </div>
 
-    <div class="message-notes">
-      <p class="note">Your messaging app will open with your request prepared. Review it and press Send to submit it.</p>
-      <p class="note">This feature works best on a mobile phone. Desktop computers may not support opening a text message automatically.</p>
+                <div class="field full-width">
+                    <label for="recurring-contact">Other Contact Information (Optional)</label>
+                    <input id="recurring-contact" name="contact" type="text"
+                           placeholder="Email or another way to reach you">
+                </div>
+
+                <div class="field">
+                    <label for="frequency">Service Frequency *</label>
+                    <select id="frequency" name="frequency" required>
+                        <option value="">Choose a frequency</option>
+                        <option value="Weekly (every 7 days)">Weekly — every 7 days</option>
+                        <option value="Biweekly (every 14 days)">Biweekly — every 14 days</option>
+                        <option value="Custom interval">Custom interval</option>
+                    </select>
+                </div>
+
+                <div class="field" id="custom-interval-field" hidden>
+                    <label for="custom-interval">Custom Service Interval *</label>
+                    <select id="custom-interval" name="customInterval">
+                        <option value="">Choose number of days</option>
+                        <option value="Every 3 days">Every 3 days</option>
+                        <option value="Every 4 days">Every 4 days</option>
+                        <option value="Every 5 days">Every 5 days</option>
+                        <option value="Every 6 days">Every 6 days</option>
+                        <option value="Every 8 days">Every 8 days</option>
+                        <option value="Every 9 days">Every 9 days</option>
+                        <option value="Every 10 days">Every 10 days</option>
+                        <option value="Every 11 days">Every 11 days</option>
+                        <option value="Every 12 days">Every 12 days</option>
+                        <option value="Every 13 days">Every 13 days</option>
+                    </select>
+                    <small>Custom intervals are available from 3 to 13 days.</small>
+                </div>
+
+                <fieldset class="field full-width">
+                    <legend>Preferred Payment Schedule *</legend>
+                    <div class="radio-options">
+                        <label>
+                            <input type="radio" name="paymentSchedule"
+                                   value="On the date each service is provided" required>
+                            On the date each service is provided
+                        </label>
+                        <label>
+                            <input type="radio" name="paymentSchedule"
+                                   value="At the start of every month" required>
+                            At the start of every month
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="field full-width">
+                    <label for="recurring-details">Additional Information (Optional)</label>
+                    <textarea id="recurring-details" name="details"
+                              placeholder="Anything else we should know about your property?"></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button class="primary-button" type="submit">Text My Request</button>
+                <button class="secondary-button" type="button" id="close-recurring">
+                    Close Form
+                </button>
+            </div>
+
+            <p class="form-note">
+                Your messaging app will open with your request prepared. Review it and press Send to submit it.
+            </p>
+            <p class="form-note">
+                This feature works best on a mobile phone. Desktop computers may not support opening a text message automatically.
+            </p>
+        </form>
+    </section>
+
+    <h2 class="section-heading">Custom Quote</h2>
+
+    <button class="custom-card" id="custom-card" type="button"
+            aria-controls="custom-form" aria-expanded="false">
+        <h3>Custom Lawn Care & Landscaping</h3>
+        <p>Choose the services you need and tell us about your project.</p>
+        <span class="select-hint">Request a Custom Quote</span>
+    </button>
+
+    <section class="form-panel" id="custom-form" aria-live="polite">
+        <h2>Custom Quote Request</h2>
+        <p class="form-description">
+            Select a service category, choose all services you are interested in,
+            and provide your property information.
+        </p>
+
+        <form id="custom-request-form">
+            <div class="field category-select">
+                <label for="service-type">What type of service do you need? *</label>
+                <select id="service-type" name="serviceType" required>
+                    <option value="">Choose a category</option>
+                    <option value="Lawn Care">Lawn Care</option>
+                    <option value="Landscaping">Landscaping</option>
+                </select>
+            </div>
+
+            <fieldset class="service-category" id="lawn-care-options">
+                <legend>Lawn Care Services</legend>
+                <div class="checkbox-grid">
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Mowing"> Mowing</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Weedeating"> Weedeating</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Edging"> Edging</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Blowing"> Blowing</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Fertilization"> Fertilization</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Spot Spraying & Weed Control"> Spot Spraying & Weed Control</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Shrub & Hedge Trimming"> Shrub & Hedge Trimming</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Other Lawn Care"> Other Lawn Care</label>
+                </div>
+            </fieldset>
+
+            <fieldset class="service-category" id="landscaping-options">
+                <legend>Landscaping Services</legend>
+                <div class="checkbox-grid">
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Flower Bed Installation"> Flower Bed Installation</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Planting Plants"> Planting Plants</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Mulch Installation"> Mulch Installation</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Decorative Rock Installation"> Decorative Rock Installation</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Sod Installation"> Sod Installation</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Leveling"> Leveling</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Shrub & Hedge Trimming"> Shrub & Hedge Trimming</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Bush & Brush Removal"> Bush & Brush Removal</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Tree Trimming"> Tree Trimming</label>
+                    <label class="checkbox-option"><input type="checkbox" name="services" value="Other Landscaping"> Other Landscaping</label>
+                </div>
+            </fieldset>
+
+            <div class="form-grid" style="margin-top: 20px;">
+                <div class="field">
+                    <label for="custom-name">Your Name *</label>
+                    <input id="custom-name" name="name" type="text"
+                           autocomplete="name" required>
+                </div>
+
+                <div class="field">
+                    <label for="custom-address">Property Address *</label>
+                    <input id="custom-address" name="address" type="text"
+                           autocomplete="street-address" required>
+                </div>
+
+                <div class="field full-width">
+                    <label for="custom-contact">Other Contact Information (Optional)</label>
+                    <input id="custom-contact" name="contact" type="text"
+                           placeholder="Email or another way to reach you">
+                </div>
+
+                <div class="field full-width custom-other">
+                    <label for="custom-details">Tell Us More (Optional)</label>
+                    <textarea id="custom-details" name="details"
+                              placeholder="Describe the work you would like done, including any services not listed above."></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button class="primary-button" type="submit">Text My Request</button>
+                <button class="secondary-button" type="button" id="close-custom">
+                    Close Form
+                </button>
+            </div>
+
+            <p class="form-note">
+                Your messaging app will open with your request prepared. Review it and press Send to submit it.
+            </p>
+            <p class="form-note">
+                This feature works best on a mobile phone. Desktop computers may not support opening a text message automatically.
+            </p>
+        </form>
+    </section>
+
+    <div class="bottom-navigation">
+        <a class="back-button" href="index.html">Back to Home</a>
     </div>
-  </section>
-
-  <section class="panel hidden" id="customQuote">
-    <h2>Custom Quote Request</h2>
-    <p class="panel-intro">Choose a category, then select all the services you need.</p>
-
-    <form id="customForm" class="form-grid">
-      <div class="field full">
-        <span class="field-label">What type of service do you need? *</span>
-        <div class="choice-grid">
-          <label class="choice">
-            <input type="radio" name="category" value="Lawn Care" checked>
-            Lawn Care
-          </label>
-          <label class="choice">
-            <input type="radio" name="category" value="Landscaping">
-            Landscaping
-          </label>
-        </div>
-      </div>
-
-      <div class="field full">
-        <span class="field-label">Select All Services You Need *</span>
-        <div id="customServices" class="choice-grid"></div>
-      </div>
-
-      <div class="field">
-        <label for="customName">Your Name *</label>
-        <input id="customName" placeholder="First and last name" autocomplete="name" required>
-      </div>
-
-      <div class="field">
-        <label for="customContact">Other Contact Information (Optional)</label>
-        <input id="customContact" placeholder="Email or another way to reach you">
-      </div>
-
-      <div class="field full">
-        <label for="customAddress">Property Address *</label>
-        <input id="customAddress" placeholder="Street address, city, and ZIP code" autocomplete="street-address" required>
-      </div>
-
-      <div class="field full">
-        <label for="customDetails">Additional Details (Optional)</label>
-        <textarea id="customDetails" placeholder="Tell us about the project or anything else we should know."></textarea>
-      </div>
-
-      <div class="field full">
-        <button class="primary-button" type="submit">Text My Request</button>
-      </div>
-    </form>
-
-    <div class="message-notes">
-      <p class="note">Your messaging app will open with your request prepared. Review it and press Send to submit it.</p>
-      <p class="note">This feature works best on a mobile phone. Desktop computers may not support opening a text message automatically.</p>
-    </div>
-  </section>
-
-  <div class="button-row">
-    <a class="back-button" href="index.html">← Back to Home</a>
-  </div>
 </main>
 
 <footer>
-  <p><strong>ONE Lawns &amp; Landscaping</strong></p>
-  <p>Anything Worth Doing, Is Worth Doing Right.</p>
-  <p><a href="tel:+14059851213">(405) 985-1213</a></p>
-  <p>Yukon • Mustang • El Reno • Oklahoma City</p>
+    <p><strong>ONE Lawns & Landscaping</strong></p>
+    <p>Anything Worth Doing, Is Worth Doing Right.</p>
+    <p>Yukon • Mustang • El Reno • Oklahoma City</p>
+    <p><a href="tel:+14059851213">(405) 985-1213</a></p>
 </footer>
 
 <script>
-const phoneNumber = '+14059851213';
+    const phoneNumber = "14059851213";
 
-const lawnServices = [
-  'Mowing',
-  'Weedeating',
-  'Edging',
-  'Blowing',
-  'Fertilization',
-  'Spot Spraying & Weed Control',
-  'Shrub & Hedge Trimming',
-  'Other Lawn Care'
-];
+    const recurringFormPanel = document.getElementById("recurring-form");
+    const customFormPanel = document.getElementById("custom-form");
+    const planNameInput = document.getElementById("plan-name");
+    const selectedPlanText = document.getElementById("selected-plan");
+    const planCards = document.querySelectorAll(".plan-card");
 
-const landscapingServices = [
-  'Flower Bed Installation',
-  'Planting Plants',
-  'Mulch Installation',
-  'Decorative Rock Installation',
-  'Sod Installation',
-  'Leveling',
-  'Shrub & Hedge Trimming',
-  'Bush & Brush Removal',
-  'Tree Trimming',
-  'Other Landscaping'
-];
-
-const planServices = {
-  'Essential Lawn Care': ['Mowing', 'Weedeating', 'Edging', 'Blowing'],
-  'Enhanced Lawn Care': [
-    'Mowing', 'Weedeating', 'Edging', 'Blowing',
-    'Shrub & Hedge Trimming'
-  ],
-  'Complete Lawn Care': [
-    'Mowing', 'Weedeating', 'Edging', 'Blowing',
-    'Shrub & Hedge Trimming', 'Fertilization',
-    'Weed Control & Spot Spraying'
-  ]
-};
-
-const planSection = document.getElementById('planRequest');
-const customSection = document.getElementById('customQuote');
-const planName = document.getElementById('planName');
-
-function openPlan(plan) {
-  customSection.classList.add('hidden');
-  planSection.classList.remove('hidden');
-  planName.value = plan;
-  document.getElementById('planHeading').textContent = plan + ' Request';
-  planSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-document.querySelectorAll('.plan-card').forEach(card => {
-  card.addEventListener('click', () => openPlan(card.dataset.plan));
-});
-
-document.getElementById('openCustom').addEventListener('click', () => {
-  planSection.classList.add('hidden');
-  customSection.classList.remove('hidden');
-  customSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-
-function renderServices() {
-  const category = document.querySelector('input[name="category"]:checked').value;
-  const services = category === 'Lawn Care' ? lawnServices : landscapingServices;
-  const container = document.getElementById('customServices');
-  container.replaceChildren();
-
-  services.forEach((service, index) => {
-    const label = document.createElement('label');
-    label.className = 'choice';
-
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.name = 'customService';
-    checkbox.value = service;
-    checkbox.id = 'customService' + index;
-
-    label.append(checkbox, document.createTextNode(service));
-    container.appendChild(label);
-  });
-}
-
-document.querySelectorAll('input[name="category"]').forEach(input => {
-  input.addEventListener('change', renderServices);
-});
-renderServices();
-
-const frequency = document.getElementById('frequency');
-const intervalWrap = document.getElementById('intervalWrap');
-const intervalInput = document.getElementById('customInterval');
-
-frequency.addEventListener('change', () => {
-  const custom = frequency.value === 'Custom interval';
-  intervalWrap.classList.toggle('hidden', !custom);
-  intervalInput.required = custom;
-  if (!custom) intervalInput.value = '';
-});
-
-document.getElementById('recurringForm').addEventListener('submit', event => {
-  event.preventDefault();
-
-  const payment = document.querySelector('input[name="payment"]:checked');
-  if (!payment) {
-    alert('Please select a payment schedule.');
-    return;
-  }
-
-  if (frequency.value === 'Custom interval') {
-    const days = Number(intervalInput.value);
-    if (!Number.isInteger(days) || days < 3 || days > 13) {
-      alert('Please enter a whole number from 3 to 13 days.');
-      intervalInput.focus();
-      return;
+    function closeRecurringForm() {
+        recurringFormPanel.classList.remove("active");
+        planCards.forEach(card => card.setAttribute("aria-expanded", "false"));
     }
-  }
 
-  const plan = planName.value;
-  const body = [
-    'ONE Lawns & Landscaping - Lawn Care Plan Request',
-    '',
-    'Selected Plan: ' + plan,
-    'Included Services: ' + planServices[plan].join(', '),
-    'Name: ' + document.getElementById('customerName').value.trim(),
-    'Property Address: ' + document.getElementById('propertyAddress').value.trim(),
-    'Other Contact Information: ' + (document.getElementById('otherContact').value.trim() || 'Not provided'),
-    'Service Frequency: ' + (
-      frequency.value === 'Custom interval'
-        ? intervalInput.value + ' days'
-        : frequency.value
-    ),
-    'Payment Schedule: ' + payment.value,
-    'Additional Information: ' + (document.getElementById('planDetails').value.trim() || 'None')
-  ].join('\n');
+    function closeCustomForm() {
+        customFormPanel.classList.remove("active");
+        document.getElementById("custom-card").setAttribute("aria-expanded", "false");
+    }
 
-  window.location.href = 'sms:' + phoneNumber + '?body=' + encodeURIComponent(body);
-});
+    planCards.forEach(card => {
+        card.addEventListener("click", () => {
+            const plan = card.dataset.plan;
 
-document.getElementById('customForm').addEventListener('submit', event => {
-  event.preventDefault();
+            planNameInput.value = plan;
+            selectedPlanText.textContent = "Selected plan: " + plan;
 
-  const selected = [
-    ...document.querySelectorAll('input[name="customService"]:checked')
-  ].map(input => input.value);
+            recurringFormPanel.classList.add("active");
+            customFormPanel.classList.remove("active");
 
-  if (!selected.length) {
-    alert('Please select at least one service.');
-    return;
-  }
+            planCards.forEach(item => item.setAttribute("aria-expanded", "false"));
+            card.setAttribute("aria-expanded", "true");
+            document.getElementById("custom-card").setAttribute("aria-expanded", "false");
 
-  const category = document.querySelector('input[name="category"]:checked').value;
-  const body = [
-    'ONE Lawns & Landscaping - Custom Quote Request',
-    '',
-    'Category: ' + category,
-    'Requested Services: ' + selected.join(', '),
-    'Name: ' + document.getElementById('customName').value.trim(),
-    'Property Address: ' + document.getElementById('customAddress').value.trim(),
-    'Other Contact Information: ' + (document.getElementById('customContact').value.trim() || 'Not provided'),
-    'Additional Details: ' + (document.getElementById('customDetails').value.trim() || 'None')
-  ].join('\n');
+            recurringFormPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
 
-  window.location.href = 'sms:' + phoneNumber + '?body=' + encodeURIComponent(body);
-});
+    document.getElementById("close-recurring").addEventListener("click", closeRecurringForm);
+
+    document.getElementById("custom-card").addEventListener("click", () => {
+        const isOpen = customFormPanel.classList.contains("active");
+
+        closeRecurringForm();
+
+        if (isOpen) {
+            closeCustomForm();
+        } else {
+            customFormPanel.classList.add("active");
+            document.getElementById("custom-card").setAttribute("aria-expanded", "true");
+            customFormPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    });
+
+    document.getElementById("close-custom").addEventListener("click", closeCustomForm);
+
+    const frequencySelect = document.getElementById("frequency");
+    const customIntervalField = document.getElementById("custom-interval-field");
+    const customIntervalSelect = document.getElementById("custom-interval");
+
+    frequencySelect.addEventListener("change", () => {
+        const isCustom = frequencySelect.value === "Custom interval";
+
+        customIntervalField.hidden = !isCustom;
+        customIntervalSelect.required = isCustom;
+
+        if (!isCustom) {
+            customIntervalSelect.value = "";
+        }
+    });
+
+    function openTextMessage(message) {
+        const url = "sms:+" + phoneNumber + "?body=" + encodeURIComponent(message);
+        window.location.href = url;
+    }
+
+    document.getElementById("recurring-request-form").addEventListener("submit", event => {
+        event.preventDefault();
+
+        const form = event.currentTarget;
+
+        if (!form.reportValidity()) {
+            return;
+        }
+
+        const data = new FormData(form);
+        const frequency = data.get("frequency");
+        const interval = data.get("customInterval");
+        const payment = data.get("paymentSchedule");
+
+        let message = "ONE Lawns & Landscaping - Recurring Lawn Care Request\n\n";
+        message += "Plan: " + data.get("plan") + "\n";
+        message += "Name: " + data.get("name") + "\n";
+        message += "Property Address: " + data.get("address") + "\n";
+        message += "Other Contact Information: " + (data.get("contact") || "Not provided") + "\n";
+        message += "Service Frequency: " + (frequency === "Custom interval" ? interval : frequency) + "\n";
+        message += "Preferred Payment Schedule: " + payment + "\n";
+        message += "Additional Information: " + (data.get("details") || "None provided");
+
+        openTextMessage(message);
+    });
+
+    document.getElementById("service-type").addEventListener("change", event => {
+        const type = event.target.value;
+        const lawnOptions = document.getElementById("lawn-care-options");
+        const landscapingOptions = document.getElementById("landscaping-options");
+
+        lawnOptions.classList.toggle("active", type === "Lawn Care");
+        landscapingOptions.classList.toggle("active", type === "Landscaping");
+
+        lawnOptions.querySelectorAll('input[type="checkbox"]').forEach(input => {
+            input.checked = false;
+        });
+        landscapingOptions.querySelectorAll('input[type="checkbox"]').forEach(input => {
+            input.checked = false;
+        });
+    });
+
+    document.getElementById("custom-request-form").addEventListener("submit", event => {
+        event.preventDefault();
+
+        const form = event.currentTarget;
+
+        if (!form.reportValidity()) {
+            return;
+        }
+
+        const type = document.getElementById("service-type").value;
+        const activeFieldset = type === "Lawn Care"
+            ? document.getElementById("lawn-care-options")
+            : document.getElementById("landscaping-options");
+
+        if (!activeFieldset.classList.contains("active")) {
+            alert("Please choose Lawn Care or Landscaping and select your services.");
+            return;
+        }
+
+        const checkedServices = Array.from(
+            activeFieldset.querySelectorAll('input[name="services"]:checked')
+        ).map(input => input.value);
+
+        if (checkedServices.length === 0) {
+            alert("Please select at least one service.");
+            return;
+        }
+
+        const data = new FormData(form);
+
+        let message = "ONE Lawns & Landscaping - Custom Quote Request\n\n";
+        message += "Category: " + type + "\n";
+        message += "Services Requested: " + checkedServices.join(", ") + "\n";
+        message += "Name: " + data.get("name") + "\n";
+        message += "Property Address: " + data.get("address") + "\n";
+        message += "Other Contact Information: " + (data.get("contact") || "Not provided") + "\n";
+        message += "Additional Details: " + (data.get("details") || "None provided");
+
+        openTextMessage(message);
+    });
 </script>
+
 </body>
 </html>
