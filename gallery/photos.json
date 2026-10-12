@@ -1,5 +1,25 @@
 [
   {
+    "src": "gallery/6egde.jpg",
+    "type": "image"
+  },
+  {
+    "src": "gallery/brettfront.jpg",
+    "type": "image"
+  },
+  {
+    "src": "gallery/idknamefront.jpg",
+    "type": "image"
+  },
+  {
+    "src": "gallery/mike5thback.jpg",
+    "type": "image"
+  },
+  {
+    "src": "gallery/mike5thfront.jpg",
+    "type": "image"
+  },
+  {
     "src": "gallery/tanner back.jpg",
     "type": "image"
   }
